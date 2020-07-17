@@ -47,6 +47,6 @@ Room has the following annotation processor options:
 https://developer.android.com/topic/libraries/architecture/room  
 https://developer.android.com/jetpack/androidx/releases/room  
 https://medium.com/mindorks/using-room-database-android-jetpack-675a89a0e942  
-https://medium.com/mindorks/room-kotlin-android-architecture-components-71cad5a1bb35
+https://medium.com/mindorks/room-kotlin-android-architecture-components-71cad5a1bb35  
 https://medium.com/androiddevelopers/7-steps-to-room-27a5fe5f99b2  
-https://www.youtube.com/watch?time_continue=100&v=SKWh4ckvFPM  
+https://www.youtube.com/watch?v=SKWh4ckvFPM
