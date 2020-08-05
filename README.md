@@ -6,7 +6,7 @@ This repository contains a number of android interview questions that can be use
 
 [Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 31  
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Java): 38  
-[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 21  
+[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 22  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 8  
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 12  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 11  
