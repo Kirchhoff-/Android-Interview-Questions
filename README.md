@@ -10,7 +10,7 @@ This repository contains a number of android interview questions that can be use
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 8  
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 12  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 11  
-[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 4  
+[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 5  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Libraries): 1
 
 
