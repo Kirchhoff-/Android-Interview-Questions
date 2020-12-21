@@ -53,3 +53,6 @@ Country = France, Capital = Paris
 # Links
 https://developer.android.com/reference/android/util/ArrayMap  
 https://medium.com/@mohom.r/optimising-android-app-performance-with-arraymap-9296f4a1f9eb
+
+# Next questions
+[What you know about SparseArray](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20you%20know%20about%20SparseArray.md)
