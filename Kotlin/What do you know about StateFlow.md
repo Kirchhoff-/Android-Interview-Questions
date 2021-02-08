@@ -1,36 +1,105 @@
 # StateFlow
+`StateFlow` and `SharedFlow` are [Flow APIs](https://developer.android.com/kotlin/flow) that enable flows to optimally emit state updates and emit values to multiple consumers.
+
+## [`StateFlow`](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow)
+`StateFlow` is a state-holder observable flow that emits the current and new state updates to its collectors. The current state value can also be read through its `value` property. To update state and send it to the flow, assign a new value to the `value` property of the `MutableStateFlow` class.
+
+In Android, `StateFlow` is a great fit for classes that need to maintain an observable mutable state.
+
+Following the examples from [Kotlin flows](https://developer.android.com/kotlin/flow), a `StateFlow` can be exposed from the `LatestNewsViewModel` so that the `View` can listen for UI state updates and inherently make the screen state survive configuration changes.
+
 ```
-interface StateFlow<out T> : SharedFlow<T> (source)
+class LatestNewsViewModel(
+    private val newsRepository: NewsRepository
+) : ViewModel() {
+
+    // Backing property to avoid state updates from other classes
+    private val _uiState = MutableStateFlow(LatestNewsUiState.Success(emptyList()))
+    // The UI collects from this StateFlow to get its state updates
+    val uiState: StateFlow<LatestNewsUiState> = _uiState
+
+    init {
+        viewModelScope.launch {
+            newsRepository.favoriteLatestNews
+                // Update View with the latest favorite news
+                // Writes to the value property of MutableStateFlow,
+                // adding a new element to the flow and updating all
+                // of its collectors
+                .collect { favoriteNews ->
+                    _uiState.value = LatestNewsUiState.Success(favoriteNews)
+                }
+        }
+    }
+}
+
+// Represents different states for the LatestNews screen
+sealed class LatestNewsUiState {
+    data class Success(news: List<ArticleHeadline>): LatestNewsUiState()
+    data class Error(exception: Throwable): LatestNewsUiState()
+}
 ```
 
-A `SharedFlow` that represents a read-only state with a single updatable data value that emits updates to the value to its collectors. A state flow is a *hot* flow because its active instance exists independently of the presence of collectors. Its current value can be retrieved via the `value` property.
+The class responsible for updating a `MutableStateFlow` is the producer, and all classes collecting from the `StateFlow` are the consumers. Unlike a cold flow built using the flow builder, a `StateFlow` is hot: collecting from the flow doesn't trigger any producer code. A `StateFlow` is always active and in memory, and it becomes eligible for garbage collection only when there are no other references to it from a garbage collection root.
 
-**State flow never completes**. A call to `Flow.collect` on a state flow never completes normally, and neither does a coroutine started by the `Flow.launchIn` function. An active collector of a state flow is called a *subscriber*.
+To convert any flow to a `StateFlow`, use the [`stateIn`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/state-in.html) intermediate operator.
 
-A mutable state flow is created using `MutableStateFlow(value)` constructor function with the initial value. The value of mutable state flow can be updated by setting its `value` property. Updates to the `value` are always `conflated`. So a slow collector skips fast updates, but always collects the most recently emitted value.
+`StateFlow` and `LiveData` have similarities. Both are observable data holder classes, and both follow a similar pattern when used in your app architecture.
 
-`StateFlow` is useful as a data-model class to represent any kind of state. Derived values can be defined using various operators on the flows, with `combine` operator being especially useful to combine values from multiple state flows using arbitrary functions.
+Note, however, that StateFlow and LiveData do behave differently:
+- `StateFlow` requires an initial state to be passed in to the constructor, while `LiveData` does not.
+- `LiveData.observe()` automatically unregisters the consumer when the view goes to the `STOPPED` state, whereas collecting from a `StateFlow` or any other flow does not.
 
-State flow is a special-purpose, high-performance, and efficient implementation of `SharedFlow` for the narrow, but widely used case of sharing a state. See the `SharedFlow` documentation for the basic rules, constraints, and operators that are applicable to all shared flows.
+## [`SharedFlow`](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#sharedflow)
+The `shareIn` function returns a `SharedFlow`, a hot flow that emits values to all consumers that collect from it. A `SharedFlow` is a highly-configurable generalization of `StateFlow`.
 
-State flow always has an initial value, replays one most recent value to new subscribers, does not buffer any more values, but keeps the last emitted one, and does not support `resetReplayCache`. A state flow behaves identically to a shared flow when it is created with the following parameters and the `distinctUntilChanged` operator is applied to it:
+You can create a `SharedFlow` without using `shareIn`. As an example, you could use a `SharedFlow` to send ticks to the rest of the app so that all the content refreshes periodically at the same time. Apart from fetching the latest news, you might also want to refresh the user information section with its favorite topics collection. In the following code snippet, a `TickHandler` exposes a `SharedFlow` so that other classes know when to refresh its content. As with `StateFlow`, use a backing property of type `MutableSharedFlow` in a class to send items to the flow:
+
 ```
-// MutableStateFlow(initialValue) is a shared flow with the following parameters:
-val shared = MutableSharedFlow(
-    replay = 1,
-    onBufferOverflow = BufferOverflow.DROP_OLDEST
-)
-shared.tryEmit(initialValue) // emit the initial value
-val state = shared.distinctUntilChanged() // get StateFlow-like behavior
+// Class that centralizes when the content of the app needs to be refreshed
+class TickHandler(
+    private val externalScope: CoroutineScope,
+    private val tickIntervalMs: Long = 5000
+) {
+    // Backing property to avoid flow emissions from other classes
+    private val _tickFlow = MutableSharedFlow<Unit>(replay = 0)
+    val tickFlow: SharedFlow<Event<String>> = _tickFlow
+
+    init {
+        externalScope.launch {
+            while(true) {
+                _tickFlow.emit(Unit)
+                delay(tickIntervalMs)
+            }
+        }
+    }
+}
+
+class NewsRepository(
+    ...,
+    private val tickHandler: TickHandler,
+    private val externalScope: CoroutineScope
+) {
+    init {
+        externalScope.launch {
+            // Listen for tick updates
+            tickHandler.tickFlow.collect {
+                refreshLatestNews()
+            }
+        }
+    }
+
+    suspend fun refreshLatestNews() { ... }
+    ...
+}
 ```
 
-Use `SharedFlow` when you need a `StateFlow` with tweaks in its behavior such as extra buffering, replaying more values, or omitting the initial value.
+You can customize the `SharedFlow` behavior in the following ways:
+- `replay` lets you resend a number of previously-emitted values for new subscribers.
+- `onBufferOverflow` lets you specify a policy for when the buffer is full of items to be sent. The default value is `BufferOverflow.SUSPEND`, which makes the caller suspend. Other options are `DROP_LATEST` or `DROP_OLDEST`.
 
-All methods of state flow are thread-safe and can be safely invoked from concurrent coroutines without external synchronization.
+`MutableSharedFlow` also has a `subscriptionCount` property that contains the number of active collectors so that you can optimize your business logic accordingly. `MutableSharedFlow` also contains a `resetReplayCache` function if you don't want to replay the latest information sent to the flow.
 
-State flow implementation is optimized for memory consumption and allocation-freedom. It uses a lock to ensure thread-safety, but suspending collector coroutines are resumed outside of this lock to avoid dead-locks when using unconfined coroutines. Adding new subscribers has `O(1)` amortized cost, but updating a `value` has `O(N)` cost, where `N` is the number of active subscribers.
-
-Example:
+### Example
 
 Following class encapsulates an integer state and increments its value on each call to `inc`:
 ```
@@ -51,6 +120,10 @@ val bModel = CounterModel()
 val sumFlow: Flow<Int> = aModel.counter.combine(bModel.counter) { a, b -> a + b }
 ```
 
+# Links
+[StateFlow and SharedFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 
-## Links
-https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
+# Futher reading
+[Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)  
+[Introducing StateFlow and SharedFlow](https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/)  
+[StateFlow, End of LiveData?](https://medium.com/scalereal/stateflow-end-of-livedata-a473094229b3)
