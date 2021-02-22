@@ -2,6 +2,9 @@
 
 This repository contains a number of android interview questions that can be used when vetting potential candidates. I created this list because wanted to have repo, where I can prepare for android job interview, without searching question and answers all around the internet. In all answers you can find the links with the source of the answer, where you may read more detailed information on the question.
 
+## List of the questions
+You can find complete list of questions on the [wiki page](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki)
+
 ## Questions count
 
 [Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 52  
