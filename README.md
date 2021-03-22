@@ -13,7 +13,7 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 16  
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 22  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 11  
-[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 20  
+[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 21  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Libraries): 5
 
 
