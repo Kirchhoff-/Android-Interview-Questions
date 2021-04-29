@@ -7,7 +7,7 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 
 ## Questions count
 
-[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 54  
+[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 55  
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Java): 59  
 [Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 34  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 16  
