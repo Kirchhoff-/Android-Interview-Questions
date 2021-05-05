@@ -11,7 +11,7 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Java): 59  
 [Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 34  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 16  
-[General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 22  
+[General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 23  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 11  
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 22  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Libraries): 5
