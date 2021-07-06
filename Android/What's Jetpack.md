@@ -78,14 +78,15 @@ A common pattern is to implement the actions of the dependent components in the 
 The `androidx.lifecycle` package provides classes and interfaces that let you build lifecycle-aware components—which are components that can automatically adjust their behavior based on the current lifecycle state of an activity or fragment.
 
 # Links
-https://developer.android.com/jetpack/getting-started  
-https://android-developers.googleblog.com/2018/05/use-android-jetpack-to-accelerate-your.html  
-https://medium.com/androiddevelopers/whats-new-in-jetpack-1891d205e136
+[Getting started with Android Jetpack](https://developer.android.com/jetpack/getting-started)  
+[Use Android Jetpack to Accelerate Your App Development](https://android-developers.googleblog.com/2018/05/use-android-jetpack-to-accelerate-your.html)  
+[What’s new in Jetpack](https://medium.com/androiddevelopers/whats-new-in-jetpack-1891d205e136)
 
 # Next questions
-[What's WorkManager](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20WorkManager.md)  
-[What's Navigation component](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20Navigation%20component.md)  
-[What you know about paging library](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20you%20know%20about%20paging%20library.md)  
-[What's Room](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20Room.md)  
-[What's ViewModel](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20ViewModel.md)  
-[What you know about lifecycle from architecture component](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20you%20know%20about%20lifecycle%20from%20architecture%20component.md)
+[What's WorkManager?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20WorkManager.md)  
+[What's Navigation component?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20Navigation%20component.md)  
+[What do you know about paging library?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20you%20know%20about%20paging%20library.md)  
+[What's Room?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20Room.md)  
+[What's ViewModel?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20ViewModel.md)  
+[What do you know about lifecycle from architecture component?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20you%20know%20about%20lifecycle%20from%20architecture%20component.md)  
+[What do you know about app startup?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20do%20you%20know%20about%20App%20Startup.md)
