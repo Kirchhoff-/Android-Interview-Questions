@@ -3,6 +3,7 @@ A toolbox of useful Operators for working with `Observables`:
 - `Delay` — shift the emissions from an `Observable` forward in time by a particular amount;
 - `Do` — register an action to take upon a variety of Observable lifecycle events;
 - `Materialize/Dematerialize` — represent both the items emitted and the notifications sent as emitted items, or reverse this process;
+- `Serialize` - force an Observable to make serialized calls and to be well-behaved;
 - `TimeInterval` — convert an `Observable` that emits items into one that emits indications of the amount of time elapsed between those emissions;
 - `Timeout` — mirror the source `Observable`, but issue an error notification if a particular period of time elapses without any emitted items;
 - `Timestamp` — attach a timestamp to each item emitted by an `Observable`.
@@ -129,6 +130,13 @@ Next item = OnCompleteNotification, isOnNext = true, isOnComplete = false
 onComplete
 Next item = null, isOnNext = false, isOnComplete = true
 ```
+
+### [Serialize](http://reactivex.io/documentation/operators/serialize.html)
+`Serialize` force an Observable to make serialized calls and to be well-behaved
+
+![](./res/serialize.png "Serialize")
+
+It is possible for an `Observable` to invoke its observers’ methods asynchronously, perhaps from different threads. This could make such an `Observable` violate [the Observable contract](http://reactivex.io/documentation/contract.html), in that it might try to send an `OnCompleted` or `OnError` notification before one of its `OnNext` notifications, or it might make an `OnNext` notification from two different threads concurrently. You can force such an `Observable` to be well-behaved and synchronous by applying the `Serialize` operator to it.
 
 ### [TimeInterval](http://reactivex.io/documentation/operators/timeinterval.html)
 Convert an `Observable` that emits items into one that emits indications of the amount of time elapsed between those emissions.
