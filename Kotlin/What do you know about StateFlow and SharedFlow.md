@@ -1,4 +1,4 @@
-# StateFlow
+# StateFlow and SharedFlow
 `StateFlow` and `SharedFlow` are [Flow APIs](https://developer.android.com/kotlin/flow) that enable flows to optimally emit state updates and emit values to multiple consumers.
 
 ## [`StateFlow`](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow)
@@ -125,5 +125,11 @@ val sumFlow: Flow<Int> = aModel.counter.combine(bModel.counter) { a, b -> a + b 
 
 # Futher reading
 [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)  
+
 [Introducing StateFlow and SharedFlow](https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/)  
+
 [StateFlow, End of LiveData?](https://medium.com/scalereal/stateflow-end-of-livedata-a473094229b3)
+
+[Kotlin SharedFlow or: How I learned to stop using RxJava and love the Flow](https://proandroiddev.com/kotlin-sharedflow-or-how-i-learned-to-stop-using-rxjava-and-love-the-flow-e1b59d211715)
+
+[StateFlow and SharedFlow: the new hot stream APIs in town](https://www.rockandnull.com/stateflow-kotlin/)
