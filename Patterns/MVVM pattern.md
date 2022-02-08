@@ -45,5 +45,7 @@ Disadvantages:
 
 [Comparing the MVC MVP and MVVM Design Patterns](https://www.developer.com/design/mvc-vs-mvp-vs-mvvm-design-patterns/)
 
+[Android Architecture Patterns Part 3: Model-View-ViewModel](https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b)
+
 # Futher reading
 [MVVM and DataBinding: Android Design Patterns](https://www.raywenderlich.com/636803-mvvm-and-databinding-android-design-patterns)
