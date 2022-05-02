@@ -20,7 +20,7 @@ With helping of data binding library we can simplify code showed above by moving
 
 Binding components in the layout file lets you remove many UI framework calls in your activities, making them simpler and easier to maintain. This can also improve your app's performance and help prevent memory leaks and null pointer exceptions.
 
-## Layouts and binding expressions
+## [Layouts and binding expressions](https://developer.android.com/topic/libraries/data-binding/expressions)
 The expression language allows you to write expressions that connect variables to the views in the layout. The Data Binding Library automatically generates the classes required to bind the views in the layout with your data objects. The library provides features such as imports, variables, and includes that you can use in your layouts.
 
 These features of the library coexist seamlessly with your existing layouts. For example, the binding variables that can be used in expressions are defined inside a `data` element that is a sibling of the UI layout's root element. Both elements are wrapped in a `layout` tag, as shown in the following example:
@@ -36,10 +36,10 @@ These features of the library coexist seamlessly with your existing layouts. For
 </layout>
 ```
 
-## Work with observable data objects
+## [Work with observable data objects](https://developer.android.com/topic/libraries/data-binding/observability)
 The Data Binding Library provides classes and methods to easily observe data for changes. You don't have to worry about refreshing the UI when the underlying data source changes. You can make your variables or their properties observable. The library allows you to make objects, fields, or collections observable.
 
-## Binding adapters
+## [Binding adapters](https://developer.android.com/topic/libraries/data-binding/binding-adapters)
 For every layout expression, there is a binding adapter that makes the framework calls required to set the corresponding properties or listeners. For example, the binding adapter can take care of calling the `setText()` method to set the text property or call the `setOnClickListener()` method to add a listener to the click event. The most common binding adapters, such as the adapters for the `android:text` property used in the examples in this page, are available for you to use in the `android.databinding.adapters` package. You can also create custom adapters, as shown in the following example:
 
 ```
@@ -49,11 +49,17 @@ fun goneUnless(view: View, visible: Boolean) {
 }
 ```
 
-## Two-way data binding
+## [Two-way data binding](https://developer.android.com/topic/libraries/data-binding/two-way)
 The Data Binding Library supports two-way data binding. The notation used for this type of binding supports the ability to receive data changes to a property and listen to user updates to that property at the same time.
 
-## Links  
-https://developer.android.com/topic/libraries/data-binding  
-https://en.wikipedia.org/wiki/Data_binding  
-https://androidwave.com/data-binding-in-android-tutorial/  
-https://android.jlelse.eu/android-data-binding-8d0eb34b9bad
+# Links  
+[Data Binding Library](https://developer.android.com/topic/libraries/data-binding)
+
+[Data binding](https://en.wikipedia.org/wiki/Data_binding)
+
+[Data Binding in Android Tutorial](https://androidwave.com/data-binding-in-android-tutorial/)
+
+[Android Data Binding](https://android.jlelse.eu/android-data-binding-8d0eb34b9bad)
+
+# Next questions
+[What is the difference between view binding and data binding](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20is%20the%20difference%20between%20view%20binding%20and%20data%20binding.md)

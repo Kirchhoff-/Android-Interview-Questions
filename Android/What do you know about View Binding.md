@@ -1,5 +1,5 @@
 # View Binding
-iew binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a `binding class` for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.
+View binding is a feature that allows you to more easily write code that interacts with views. Once view binding is enabled in a module, it generates a `binding class` for each XML layout file present in that module. An instance of a binding class contains direct references to all views that have an ID in the corresponding layout.
 
 In most cases, view binding replaces `findViewById`.
 
@@ -105,3 +105,6 @@ View binding has important advantages over using `findViewById`:
 [Use view binding to replace findViewById](https://medium.com/androiddevelopers/use-view-binding-to-replace-findviewbyid-c83942471fc)
 
 [Android Jetpack: Replace findViewById with view binding](https://www.youtube.com/watch?v=W7uujFrljW0)
+
+# Next questions
+[What is the difference between view binding and data binding](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20is%20the%20difference%20between%20view%20binding%20and%20data%20binding.md)
