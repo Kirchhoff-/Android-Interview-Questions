@@ -16,10 +16,16 @@ The principal motivations for **HTTPS** are authentication of the accessed websi
 | Website don't need SSL | Website need SSL |
 | Works at Application Layer  | Works at Transport Layer  |
 
-## Links
-https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol  
-https://en.wikipedia.org/wiki/HTTPS  
-https://www.keycdn.com/blog/difference-between-http-and-https  
-https://www.globalsign.com/en/blog/the-difference-between-http-and-https  
-https://www.geeksforgeeks.org/difference-between-http-and-https/  
-https://www.guru99.com/difference-http-vs-https.html  
+# Links
+[Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+
+[HTTPS](https://en.wikipedia.org/wiki/HTTPS)
+
+[What Is the Difference Between HTTP and HTTPS?](https://www.keycdn.com/blog/difference-between-http-and-https)
+
+[What's the difference between HTTP and HTTPS?](https://www.globalsign.com/en/blog/the-difference-between-http-and-https)
+
+[Difference between http:// and https://](https://www.geeksforgeeks.org/difference-between-http-and-https/)
+
+[HTTP vs HTTPS: What is Difference Between HTTP and HTTPS? Full Form](https://www.guru99.com/difference-http-vs-https.html)
+
