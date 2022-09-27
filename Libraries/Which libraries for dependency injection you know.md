@@ -28,8 +28,18 @@ Kodein-DI is a good choice because:
 - It is fast and optimized (makes extensive use of inline)
 - It can be used in plain Java
 
-## Links
-https://github.com/google/dagger  
-https://developer.android.com/training/dependency-injection/hilt-android  
-https://github.com/InsertKoinIO/koin  
-https://github.com/Kodein-Framework/Kodein-DI
+# Links
+[dagger](https://github.com/google/dagger)
+
+[Dependency injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+
+[koin](https://github.com/InsertKoinIO/koin)
+
+[Kodein](https://github.com/kosi-libs/Kodein)
+
+# Next questions 
+[What's Dagger 2?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What's%20Dagger%202.md)
+
+[What do you know about hilt?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What%20do%20you%20know%20about%20hilt.md)
+
+[What do you know about Koin?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What%20do%20you%20know%20about%20Koin.md)
