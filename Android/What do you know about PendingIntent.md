@@ -6,6 +6,8 @@ By giving a `PendingIntent` to another application, you are granting it the righ
 
 It is an `Intent` action that you want to perform but at a later time. The reason it’s needed is because an `Intent` must be created and launched from a valid context in your application, but there are certain cases where one is not available at the time you want to run the action because you are technically outside the application’s context. 
 
+Android 12 includes [important changes](https://developer.android.com/about/versions/12/behavior-changes-12#pending-intent-mutability)  to pending intents, including a change that requires explicitly deciding when a `PendingIntent` is mutable or immutable.
+
 ## Example of usage
 The most common, and most basic, way to use a `PendingIntent` is as the action associated with a notification:
 
@@ -66,6 +68,18 @@ val updatedPendingIntent = PendingIntent.getActivity(
 - `FLAG_ONE_SHOT`: Only allows the `PendingIntent` to be sent once (via `PendingIntent.send()`). This can be important when passing a `PendingIntent` to another app if the `Intent` inside it should only be able to be sent a single time. This may be related to convenience, or to prevent the app from performing some action multiple times.
 
 - `FLAG_CANCEL_CURRENT`: Cancels an existing `PendingIntent`, if one exists, before registering this new one. This can be important if a particular `PendingIntent` was sent to one app, and you’d like to send it to a different app, potentially updating the data. By using `FLAG_CANCEL_CURRENT`, the first app would no longer be able to call send on it, but the second app would be.
+
+## Receiving PendingIntents
+Sometimes the system or other frameworks will provide a `PendingIntent` as a return from an API call. One example is the method `MediaStore.createWriteRequest()` that was added in Android 11.
+
+```
+static fun MediaStore.createWriteRequest(
+    resolver: ContentResolver, 
+    uris: MutableCollection<Uri>
+): PendingIntent
+```
+
+Just as a `PendingIntent` created by our app is run with our app’s identity, a `PendingIntent` created by the system is run with the system’s identity. In the case of this API, this allows our app to start an `Activity` that can grant write permission to a collection of Uris to our app.
 
 # Links
 [PendingIntent](https://developer.android.com/reference/android/app/PendingIntent)
