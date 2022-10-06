@@ -67,8 +67,16 @@ One of the considerations with Dagger is that injected fields cannot be private.
 
 **Note**: Field injection should only be used in Android framework classes where constructor injection cannot be used.
 
-## Links
-https://dagger.dev/  
-https://developer.android.com/training/dependency-injection/dagger-android  
-https://www.baeldung.com/dagger-2  
-https://www.vogella.com/tutorials/Dagger/article.html  
+# Links
+[Dagger](https://dagger.dev/)
+
+[Using Dagger in Android apps](https://developer.android.com/training/dependency-injection/dagger-android)
+
+[Introduction to Dagger 2](https://www.baeldung.com/dagger-2)
+
+[Using Dagger 2 for dependency injection in Android - Tutorial](https://www.vogella.com/tutorials/Dagger/article.html)
+
+# Next questions
+[Main annotations in Dagger 2](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/Main%20annotations%20in%20Dagger%202.md)
+
+[@Binds vs @Provides](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What%20the%20difference%20between%20%40Bind%20and%20%40Provides%20in%20Dagger%202.md)
