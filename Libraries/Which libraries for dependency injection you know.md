@@ -38,8 +38,10 @@ Kodein-DI is a good choice because:
 [Kodein](https://github.com/kosi-libs/Kodein)
 
 # Next questions 
-[What's Dagger 2?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What's%20Dagger%202.md)
+[What's Dagger 2?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What's%20Dagger%202.md)
 
-[What do you know about hilt?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What%20do%20you%20know%20about%20hilt.md)
+[What do you know about hilt?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What%20do%20you%20know%20about%20hilt.md)
 
-[What do you know about Koin?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/di_libraries_links_fix/Libraries/What%20do%20you%20know%20about%20Koin.md)
+[What do you know about Koin?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What%20do%20you%20know%20about%20Koin.md)
+
+[What do you know about Kodein?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What%20do%20you%20know%20about%20Kodein.md)

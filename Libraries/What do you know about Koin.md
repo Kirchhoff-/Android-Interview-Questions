@@ -147,5 +147,5 @@ class DetailActivity : AppCompatActivity() {
 
 [Koin documentation](https://insert-koin.io/docs/reference/introduction)
 
-# Futher reading
+# Further reading
 [Kotzilla - Latest News](https://blog.kotzilla.io/)
