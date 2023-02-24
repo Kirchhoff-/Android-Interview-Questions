@@ -86,3 +86,6 @@ Canvas(modifier = modifier) {
 
 # Links
 [Jetpack Compose Phases](https://developer.android.com/jetpack/compose/phases)
+
+# Further reading
+[Compose phases](https://medium.com/androiddevelopers/compose-phases-7fe6630ea037)
