@@ -139,3 +139,7 @@ If one of the types that are extended by `T` is a class (e.g. `Number`), we have
 [Lesson: Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 
 [Java Generics Example Tutorial - Generic Method, Class, Interface](https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface)
+
+# Next Questions
+[What do you know about wildcard?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20wildcard.md)
+
