@@ -67,6 +67,8 @@ Difference between `add()` and `replace()` can be illustrated by image:
 # Next questions
 [Fragment Lifecycle](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/Fragment%20Lifecycle.md)
 
+[How to communicate with fragments?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/How%20to%20communicate%20with%20fragments.md)
+
 # Further Reading
 [Building dynamic user interfaces in Android with fragments - Tutorial](https://www.vogella.com/tutorials/AndroidFragments/article.html)
 
