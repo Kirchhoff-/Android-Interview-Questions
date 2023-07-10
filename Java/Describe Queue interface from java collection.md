@@ -33,6 +33,11 @@ An unbounded blocking queue that uses the same ordering rules as class `Priority
 [Java Queue Interface](https://www.programiz.com/java-programming/queue)
 
 [Interface Queue](https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html)
+
+# Next questions
+[Describe `Deque` interface from java collection](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/Describe%20Deque%20interface%20from%20java%20collection.md)
+
+[What do you know about `LinkedList`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20LinkedList.md)
   
 # Further reading
 [Java Queue – Queue in Java](https://www.digitalocean.com/community/tutorials/java-queue)
