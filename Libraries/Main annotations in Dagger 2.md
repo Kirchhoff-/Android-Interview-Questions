@@ -85,3 +85,6 @@ interface ModuleComponent {
 [Dependency injection with Dagger 2: @Inject and @Provides](https://medium.com/@yostane/dependency-injection-with-dagger-2-inject-and-provides-ce21f7449ec5)
 
 [Dagger 2- Annotations](https://blog.canopas.com/dagger-2-annotation-b3a27d53dabf)
+
+# Next questions
+[What the difference between @Bind and @Provides in Dagger 2?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Libraries/What%20the%20difference%20between%20%40Bind%20and%20%40Provides%20in%20Dagger%202.md)
