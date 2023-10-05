@@ -34,3 +34,8 @@ Some common pitfalls are as follows:
 
 # Links
 [Guide to Android app modularization](https://developer.android.com/topic/modularization)
+
+# Next questions
+[What modularization patterns do you know?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20modularization%20patterns%20do%20you%20know.md)
+
+[What types of modules do you know?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20types%20of%20modules%20do%20you%20know.md)
