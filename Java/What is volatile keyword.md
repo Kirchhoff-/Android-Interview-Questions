@@ -44,8 +44,14 @@ In the scenario given above, where one thread (T1) modifies the counter, and ano
 - It is used to inform the compiler that multiple threads will access a particular statement. It prevents the compiler from doing any reordering or any optimization.
 - If you do not use volatile variable compiler can reorder the code, free to write in cache value of volatile variable instead of reading from the main memory.
 
-## Links
-https://www.javatpoint.com/volatile-keyword-in-java  
-http://tutorials.jenkov.com/java-concurrency/volatile.html  
-https://www.javamex.com/tutorials/synchronization_volatile.shtml  
-https://www.geeksforgeeks.org/volatile-keyword-in-java/  
+# Links
+[Volatile Keyword in Java](https://www.javatpoint.com/volatile-keyword-in-java)
+
+[Java Volatile Keyword](http://tutorials.jenkov.com/java-concurrency/volatile.html)
+
+[The volatile keyword in Java](https://www.javamex.com/tutorials/synchronization_volatile.shtml)
+
+[volatile Keyword in Java](https://www.geeksforgeeks.org/volatile-keyword-in-java/)
+
+# Next questions
+[What do you know about double check pattern singleton?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20double%20check%20pattern%20singleton.md)
