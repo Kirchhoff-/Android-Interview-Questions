@@ -16,8 +16,9 @@ Implicit intents do not name a specific component, but instead declare a general
 The Android system then compares the given intent against all apps installed on the device to see which ones can handle that action, and therefore process that intent. If more than one can handle the intent, the user is prompted to choose one
 If only one app responds, the intent automatically takes the user to that app to perform the action.
 
+# Links
+[Intent](https://developer.android.com/reference/android/content/Intent)
 
-## Links
-https://developer.android.com/reference/android/content/Intent
-https://www.vogella.com/tutorials/AndroidIntent/article.html  
-https://www.raywenderlich.com/4700198-android-intents-tutorial-with-kotlin
+[Android Intents - Tutorial](https://www.vogella.com/tutorials/AndroidIntent/article.html)
+
+[Android Intents Tutorial with Kotlin](https://www.raywenderlich.com/4700198-android-intents-tutorial-with-kotlin)
