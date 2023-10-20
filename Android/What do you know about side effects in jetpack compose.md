@@ -233,8 +233,32 @@ fun TodoList(highPriorityKeywords: List<String> = listOf("Review", "Unblock", "C
 ```
 In the code above, `derivedStateOf` guarantees that whenever `todoTasks` changes, the `highPriorityTasks` calculation will occur and the UI will be updated accordingly. If `highPriorityKeywords` changes, the `remember` block will be executed and a new derived state object will be created and remembered in place of the old one. As the filtering to calculate `highPriorityTasks` can be expensive, it should only be executed when any of the lists change, not on every recomposition.
 
+## [When to use each](https://medium.com/@mortitech/exploring-side-effects-in-compose-f2e8a8da946b#:~:text=of%20our%20app.-,When%20to%20use%20each,-Use%20Cases%20of)
+Use Cases of `DisposableEffect`:
+- Adding and removing event listeners;
+- Starting and stopping animations;
+- Bind and unbinding sensors resources such as Camera, `LocationManager`, etc;
+- Managing database connections.
+
+Use Cases of `LaunchedEffect`:
+- Fetching Data from a Network;
+- Performing Image Processing;
+- Updating a Database.
+
+Use Cases of `SideEffect`:
+- Logging and Analytics;
+- Performing One-Time Initialization such as setting up a connection to a Bluetooth device, loading data from a file, or initializing a library.
+
+## [Summary](https://medium.com/@mortitech/exploring-side-effects-in-compose-f2e8a8da946b#:~:text=code%20here%0A%7D-,Summary,-Here%E2%80%99s%20a%20summary)
+Here’s a summary of the differences between `SideEffect`, `DisposableEffect`, and `LaunchedEffect`:
+- `SideEffect` is executed when its parent Composable is recomposed and is useful for executing operations that do not depend on the Composable's state or props;
+- `DisposableEffect` is executed when its parent Composable is first rendered and is useful for managing resources that need to be cleaned up when a Composable is no longer in use. **It triggers on first composition or key change** and it invokes `onDispose` method on termination;
+- `LaunchedEffect` executes a side effect in a separate coroutine scope, and is useful for executing long-running operations without blocking the UI thread. **It triggers on first composition or key change**.
+
 # Links  
 [Side-effects in Compose](https://developer.android.com/jetpack/compose/side-effects)
+
+[Jetpack Compose Side Effects in Details](https://medium.com/@mortitech/exploring-side-effects-in-compose-f2e8a8da946b)
 
 # Further Reading
 [Jetpack Compose Side Effects Made Easy](https://medium.com/mobile-app-development-publication/jetpack-compose-side-effects-made-easy-a4867f876928)
