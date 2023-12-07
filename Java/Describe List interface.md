@@ -43,13 +43,19 @@ Note the argument to listIterator in the preceding idiom. The `List` interface h
 - Supports Generics;
 
 # Links
-https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html  
-https://docs.oracle.com/javase/8/docs/api/java/util/List.html  
-https://www.journaldev.com/11444/java-list  
+[The `List` Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html)
+
+[Interface `List`](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
+
+[Java `List` - List in Java](https://www.journaldev.com/11444/java-list)
 
 # Next questions
-[What you know about ArrayList](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20you%20know%20about%20ArrayList.md)  
-[What you know about LinkedList](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20you%20know%20about%20LinkedList.md)  
-[What you know about Vector](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20you%20know%20about%20Vector.md)  
-[What you know about Stack](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20you%20know%20about%20Stack.md)  
-[ArrayList vs LinkedList](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/ArrayList%20vs%20LinkedList.md)  
+[What you know about `ArrayList`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20ArrayList.md)
+
+[What you know about `LinkedList`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20LinkedList.md)
+
+[What you know about `Vector`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20Vector.md)
+
+[What you know about `Stack`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20Stack.md)
+
+[What is the difference between `ArrayList` and `LinkedList`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/ArrayList%20vs%20LinkedList.md)
