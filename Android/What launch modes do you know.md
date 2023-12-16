@@ -83,5 +83,8 @@ The activity can only be running as the root activity of the task, the first act
 
 [Android Activity Launch Mode](https://medium.com/android-news/android-activity-launch-mode-e0df1aa72242)
 
+# Next questions
+[What do you know about `taskAffinity`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20do%20you%20know%20about%20taskAffinity.md)
+
 # Further reading
 [Understand Android Activity's launchMode: standard, singleTop, singleTask and singleInstance](https://inthecheesefactory.com/blog/understand-android-activity-launchmode/en)
