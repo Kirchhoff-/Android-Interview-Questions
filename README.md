@@ -12,7 +12,7 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 
 [Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 84  
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Java): 71  
-[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 42  
+[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 43  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 19  
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 36  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 13  
