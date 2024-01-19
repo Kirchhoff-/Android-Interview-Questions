@@ -156,3 +156,5 @@ The following are general tips to avoid ANRs:
 
 # Further reading
 [Android: Tackling Application Not Responding(ANRs)](https://medium.com/codex/android-tackling-application-not-responding-anrs-3c91360cd023)
+
+[How to resolve ANR issue in the Android System](https://medium.com/make-android/how-to-resolve-anr-issue-in-the-android-system-0d2eff3205f9)
