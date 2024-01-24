@@ -6,7 +6,8 @@ This repository contains a number of android interview questions that can be use
 You can find complete list of questions on the [wiki page](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki)
 
 ## Interview examples
-[Junior android developer](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Junior-android-developer-interview-questions)
+[Junior android developer](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Junior-android-developer-interview-questions)  
+[Middle android developer (Rx stack)](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Middle-android-developer-interview-questions-(Rx-stack))
 
 ## Questions count
 
