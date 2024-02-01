@@ -9,8 +9,12 @@ SOLID is a mnemonic acronym for five design principles intended to make software
 - **Interface segregation principle** - Many client-specific interfaces are better than one general-purpose interface.
 - **Dependency inversion principle** - Depend on abstractions, not on concretions.
 
+# Links
+[SOLID](https://en.wikipedia.org/wiki/SOLID)
 
-## Links
-https://en.wikipedia.org/wiki/SOLID  
-https://medium.com/@dhkelmendi/solid-principles-made-easy-67b1246bcdf  
-https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4  
+[SOLID Principles made easy](https://medium.com/@dhkelmendi/solid-principles-made-easy-67b1246bcdf)
+
+[SOLID Principles: Explanation and examples](https://itnext.io/solid-principles-explanation-and-examples-715b975dcad4)
+
+# Further reading
+[👨‍💻Kotlin SOLID Principles](https://medium.com/huawei-developers/kotlin-solid-principles-tutorial-examples-192bf8c049dd)
