@@ -89,3 +89,5 @@ res/values/arrays.xml
 [Downloadable fonts (in Jetpack Compose)](https://developer.android.com/jetpack/compose/text/fonts#downloadable-fonts)
 
 [Downloadable Fonts](https://blog.stylingandroid.com/downloadable-fonts/)
+
+[Downloadable and Preloaded Fonts on Android](https://dladukedev.com/articles/031_preload_typeface_compose/)
