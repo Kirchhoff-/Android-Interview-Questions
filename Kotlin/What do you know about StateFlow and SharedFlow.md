@@ -123,7 +123,7 @@ val sumFlow: Flow<Int> = aModel.counter.combine(bModel.counter) { a, b -> a + b 
 # Links
 [StateFlow and SharedFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)
 
-# Futher reading
+# Further reading
 [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)  
 
 [Introducing StateFlow and SharedFlow](https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/)  
@@ -133,3 +133,5 @@ val sumFlow: Flow<Int> = aModel.counter.combine(bModel.counter) { a, b -> a + b 
 [Kotlin SharedFlow or: How I learned to stop using RxJava and love the Flow](https://proandroiddev.com/kotlin-sharedflow-or-how-i-learned-to-stop-using-rxjava-and-love-the-flow-e1b59d211715)
 
 [StateFlow and SharedFlow: the new hot stream APIs in town](https://www.rockandnull.com/stateflow-kotlin/)
+
+[SharedFlow vs. StateFlow: Best Practices and Real-world examples](https://medium.com/@mortitech/sharedflow-vs-stateflow-a-comprehensive-guide-to-kotlin-flows-503576b4de31)
