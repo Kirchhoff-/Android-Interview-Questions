@@ -129,7 +129,7 @@ Child secondary constructor
 # Links
 [Classes](https://kotlinlang.org/docs/classes.html#creating-instances-of-classes)
 
-# Futher reading
+# Further reading
 [Kotlin Constructors](https://www.programiz.com/kotlin-programming/constructors)
 
 [An in-depth look at Kotlin’s initializers](https://medium.com/keepsafe-engineering/an-in-depth-look-at-kotlins-initializers-a0420fcbf546)

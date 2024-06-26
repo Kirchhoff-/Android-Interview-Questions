@@ -146,7 +146,7 @@ newString?.let { c = it }.also { println("Logging the value: $it") }
 # Links
 [Nullability in Java and Kotlin](https://kotlinlang.org/docs/java-to-kotlin-nullability-guide.html)
 
-# Futher reading
+# Further reading
 [Null safety](https://kotlinlang.org/docs/null-safety.html)
 
 [Null safety](https://kotlinlang.org/docs/tutorials/kotlin-for-py/null-safety.html)

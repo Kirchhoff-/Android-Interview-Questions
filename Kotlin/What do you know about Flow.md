@@ -111,7 +111,7 @@ https://kotlinlang.org/docs/reference/coroutines/flow.html
 https://developer.android.com/kotlin/flow  
 https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/
 
-# Futher reading
+# Further reading
 [Testing Kotlin flows on Android](https://developer.android.com/kotlin/flow/test)  
 [StateFlow and SharedFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow)  
 [Additional resources for Kotlin coroutines and flow](https://developer.android.com/kotlin/coroutines/additional-resources)  

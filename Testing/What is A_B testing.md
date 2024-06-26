@@ -26,5 +26,5 @@ You’ll see it being used to compare smaller elements such as styles of call-to
 
 [What is A/B Testing and Why It Matters for Mobile Developers](https://splitmetrics.com/resources/what-is-ab-testing-and-why-it-matters-for-mobile-developers/)
 
-# Futher reading
+# Further reading
 [A/B Testing](https://www.optimizely.com/optimization-glossary/ab-testing/)

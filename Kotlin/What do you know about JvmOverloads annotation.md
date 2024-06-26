@@ -48,6 +48,6 @@ public class JavaClass {
 [JvmOverloads](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/#jvmoverloads)  
 [Kotlin-Java interop guide](https://developer.android.com/kotlin/interop)
 
-# Futher reading
+# Further reading
 [Misconception about Kotlin @JvmOverloads for Android View Creation](https://proandroiddev.com/misconception-about-kotlin-jvmoverloads-for-android-view-creation-cb88f432e1fe)  
 [@JvmOverloads for Android Views](https://zsmb.co/jvmoverloads-for-android-views/)

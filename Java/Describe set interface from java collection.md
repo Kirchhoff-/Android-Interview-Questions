@@ -34,5 +34,5 @@ https://www.programiz.com/java-programming/set
 [What do you know about LinkedHashSet](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20LinkedHashSet.md)  
 [What do you know about TreeSet](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20TreeSet.md)
 
-# Futher reading
+# Further reading
 [The Set Interface](https://docs.oracle.com/javase/tutorial/collections/interfaces/set.html)

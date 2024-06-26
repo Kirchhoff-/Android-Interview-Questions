@@ -93,7 +93,7 @@ When using the `ActivityResultRegistry` APIs, it's strongly recommended to use t
 # Links
 [Getting a result from an activity](https://developer.android.com/training/basics/intents/result)
 
-# Futher reading
+# Further reading
 [Activity Results API: A better way to pass data between Activities](https://proandroiddev.com/is-onactivityresult-deprecated-in-activity-results-api-lets-deep-dive-into-it-302d5cf6edd)
 
 [The right way to get a result (Part I): Activity Result API](https://medium.com/e-legion/the-right-way-to-get-a-result-part-i-activity-result-api-6efbcaa5600d)

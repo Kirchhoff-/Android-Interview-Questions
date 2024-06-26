@@ -47,5 +47,5 @@ Disadvantages:
 
 [Android Architecture Patterns Part 3: Model-View-ViewModel](https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b)
 
-# Futher reading
+# Further reading
 [MVVM and DataBinding: Android Design Patterns](https://www.raywenderlich.com/636803-mvvm-and-databinding-android-design-patterns)

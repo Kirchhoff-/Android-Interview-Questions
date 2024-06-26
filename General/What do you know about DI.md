@@ -126,7 +126,7 @@ Criticisms of dependency injection argue that it:
 
 [Strategy pattern](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Patterns/Strategy%20pattern.md)
 
-# Futher reading
+# Further reading
 [Dependency Injection](http://tutorials.jenkov.com/dependency-injection/index.html)
 
 [Dependency injection in Android](https://developer.android.com/training/dependency-injection)

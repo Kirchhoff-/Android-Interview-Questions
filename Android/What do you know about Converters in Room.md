@@ -86,5 +86,5 @@ To reference multiple entities at the same time using Room, you instead create a
 # Links 
 [Referencing complex data using Room](https://developer.android.com/training/data-storage/room/referencing-data)
 
-# Futher reading
+# Further reading
 [What is TypeConverter in Room? How to use it properly](https://clintpaul.medium.com/what-is-typeconverter-in-room-how-to-use-it-properly-e7b4847012b4)

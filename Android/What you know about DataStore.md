@@ -135,7 +135,7 @@ This way, DataStore asynchronously reads the data and caches it in memory. Later
 # Links
 [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
 
-# Futher reading
+# Further reading
 [Prefer Storing Data with Jetpack DataStore](https://android-developers.googleblog.com/2020/09/prefer-storing-data-with-jetpack.html)  
 [Working with Preferences DataStore](https://developer.android.com/codelabs/android-preferences-datastore#0)  
 [Working with Proto DataStore](https://developer.android.com/codelabs/android-proto-datastore#0)
