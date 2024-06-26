@@ -66,7 +66,7 @@ Beyond these restrictions, records behave like regular classes:
 # Links
 [Records](https://docs.oracle.com/en/java/javase/14/language/records.html)
 
-# Futher reading
+# Further reading
 [Java 14 Record Keyword](https://www.baeldung.com/java-record-keyword)
 
 [Java Record](http://tutorials.jenkov.com/java/record.html)

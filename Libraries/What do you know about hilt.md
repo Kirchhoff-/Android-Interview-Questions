@@ -98,7 +98,7 @@ Installing a module into a component allows its bindings to be accessed as a dep
 # Links
 [Dependency injection with Hilt](https://developer.android.com/training/dependency-injection/hilt-android#hilt-and-dagger)
 
-# Futher reading
+# Further reading
 [Dependency injection on Android with Hilt](https://medium.com/androiddevelopers/dependency-injection-on-android-with-hilt-67b6031e62d)  
 [Scoping in Android and Hilt](https://medium.com/androiddevelopers/scoping-in-android-and-hilt-c2e5222317c0)  
 [Hilt — Adding components to the hierarchy](https://medium.com/androiddevelopers/hilt-adding-components-to-the-hierarchy-96f207d6d92d)  

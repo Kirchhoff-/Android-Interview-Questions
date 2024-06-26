@@ -31,7 +31,7 @@ Many of these challenges arise due to particularities of the mobile environment.
 # Links
 [MongoDB Realm Docs](https://www.mongodb.com/docs/realm)  
 
-# Futher reading
+# Further reading
 [Java SDK Tutorial](https://www.mongodb.com/docs/realm/tutorial/java-sdk/#std-label-java-sdk-tutorial)
 
 [realm-kotlin](https://github.com/realm/realm-kotlin)

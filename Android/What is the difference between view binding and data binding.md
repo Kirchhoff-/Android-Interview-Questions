@@ -31,7 +31,7 @@ We can represent the view binding as a part of data binding library which means 
 
 [Android : Difference between DataBinding and ViewBinding](https://stackoverflow.com/a/67722508)
 
-# Futher reading
+# Further reading
 [Android View Binding or Data Binding? [2 easy use cases]](https://www.simplifiedcoding.net/view-binding-or-data-binding/)
 
 # Related questions

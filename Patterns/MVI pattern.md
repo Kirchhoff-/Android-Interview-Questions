@@ -37,7 +37,7 @@ However, nothing is perfect, and there are some drawbacks, you should be aware o
 
 [MVI — another member of the MV* band](https://proandroiddev.com/mvi-a-new-member-of-the-mv-band-6f7f0d23bc8a)
 
-# Futher reading
+# Further reading
 [MVI with state-machine. Basics.](https://proandroiddev.com/mvi-architecture-with-a-state-machine-basics-721c5ebed893)
 
 [Reactive Apps with Model-View-Intent - Part 1: Model](http://hannesdorfmann.com/android/mosby3-mvi-1/)

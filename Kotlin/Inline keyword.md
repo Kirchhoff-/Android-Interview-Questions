@@ -189,7 +189,7 @@ public final class InlinePropertyExample {
 
 [A Practical Guide to Kotlin's inline Modifier](https://maxkim.eu/a-practical-guide-to-kotlins-inline-modifier)
 
-# Futher reading
+# Further reading
 [Inline function : Kotlin](https://agrawalsuneet.medium.com/inline-function-kotlin-3f05d2ea1b59)
 
 [Kotlin Inline Functions](https://www.geeksforgeeks.org/kotlin-inline-functions/)

@@ -44,7 +44,7 @@ Model-View-Presenter](https://medium.com/upday-devs/android-architecture-pattern
 
 [Model-View-Presenter (MVP) for Android](https://dzone.com/articles/model-view-presenter-for-andriod)
 
-# Futher reading
+# Further reading
 [Building An Application With MVP](https://androidessence.com/building-an-app-with-mvp)
 
 [Android MVP Architecture for Beginners (Demo App)](https://androidwave.com/android-mvp-architecture-for-beginners-demo-app/)

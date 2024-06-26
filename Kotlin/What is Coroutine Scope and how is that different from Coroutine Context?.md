@@ -54,5 +54,5 @@ public interface CoroutineScope {
 
 [Kotlin Coroutine Scope, Context, and Job made simple](https://medium.com/mobile-app-development-publication/kotlin-coroutine-scope-context-and-job-made-simple-5adf89fcfe94)
 
-# Futher reading 
+# Further reading
 [Coroutine Context and Scope](https://elizarov.medium.com/coroutine-context-and-scope-c8b255d59055)

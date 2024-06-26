@@ -122,7 +122,7 @@ Extensions utilize the same visibility modifiers as regular functions declared i
 # Next questions
 [What do you know about Decorator pattern?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Patterns/Decorator%20pattern.md)
 
-# Futher reading
+# Further reading
 [Writing clean models using extensions](https://okkotlin.com/clean-models/)
 
 [Bad Kotlin Extensions](https://krossovochkin.com/posts/2021_01_25_bad_kotlin_extensions/)
