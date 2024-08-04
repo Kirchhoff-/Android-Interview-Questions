@@ -1,0 +1,4 @@
+modules = ["nix"]
+
+[nix]
+channel = "stable-24_05"
