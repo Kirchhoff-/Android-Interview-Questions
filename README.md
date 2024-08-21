@@ -12,14 +12,14 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 
 ## Questions count
 
-[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Android): 92  
-[Java](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Java): 70  
-[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Kotlin): 45  
-[Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Rx): 20  
-[General](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/General): 44  
-[Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Testing): 13  
-[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Patterns): 28  
-[Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/tree/master/Libraries): 12
+[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Android): 92  
+[Java](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Java): 70  
+[Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Kotlin): 45  
+[Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Rx): 20  
+[General](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/General): 44  
+[Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Testing): 13  
+[Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
+[Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 12
 
 
 ## Contributing
