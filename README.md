@@ -21,6 +21,7 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 12
 
+Total number of questions: 325
 
 ## Contributing
 Pull Request are highly appreciated. Feel free to create a pull request if you find any mistakes or have better answers. Thanks a lot, and hope this is useful.
