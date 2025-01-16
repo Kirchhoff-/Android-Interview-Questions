@@ -26,5 +26,8 @@ Examples of test assignments can be found [here](https://github.com/Kirchhoff-/A
 
 Total number of questions: 326
 
+## Discussions
+The [Discussions](https://github.com/Kirchhoff-/Android-Interview-Questions/discussions) section also works. It contains questions where your opinion would be interesting to know.
+
 ## Contributing
 Pull Request are highly appreciated. Feel free to create a pull request if you find any mistakes or have better answers. Thanks a lot, and hope this is useful.
