@@ -22,9 +22,9 @@ Examples of test assignments can be found [here](https://github.com/Kirchhoff-/A
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/General): 45  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Testing): 13  
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
-[Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 12
+[Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 13
 
-Total number of questions: 327
+Total number of questions: 328
 
 ## Discussions
 The [Discussions](https://github.com/Kirchhoff-/Android-Interview-Questions/discussions) section also works. It contains questions where your opinion would be interesting to know.
