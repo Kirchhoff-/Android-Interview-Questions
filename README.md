@@ -15,7 +15,7 @@ Examples of test assignments can be found [here](https://github.com/Kirchhoff-/A
 
 ## Questions count
 
-[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Android): 94  
+[Android](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Android): 95  
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Java): 69  
 [Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Kotlin): 48  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Rx): 20  
@@ -24,7 +24,7 @@ Examples of test assignments can be found [here](https://github.com/Kirchhoff-/A
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 13
 
-Total number of questions: 328
+Total number of questions: 329
 
 ## Discussions
 The [Discussions](https://github.com/Kirchhoff-/Android-Interview-Questions/discussions) section also works. It contains questions where your opinion would be interesting to know.
