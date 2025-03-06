@@ -1,142 +1,87 @@
 # Bridge pattern
-The bridge pattern is a design pattern used for *"decouple an abstraction from its implementation so that the two can vary independently"*. The *bridge* uses encapsulation, aggregation, and can use inheritance to separate responsibilities into different classes.
+Bridge is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
 
-When a class varies often, the features of object-oriented programming become very useful because changes to a program's code can be made easily with minimal prior knowledge about the program. The bridge pattern is useful when both the class and what it does vary often. The class itself can be thought of as the *abstraction* and what the class can do as the *implementation*. The bridge pattern can also be thought of as two layers of abstraction.
+This pattern involves an interface which acts as a bridge which makes the functionality of concrete classes independent from interface implementer classes. Both types of classes can be altered structurally without affecting.<sup>[1](https://dev.to/jps27cse/software-design-pattern-bridge-pattern-43f8#:~:text=Bridge%20is%20a,structurally%20without%20affecting)</sup>
 
 The Bridge design pattern solves problems like:
 - An abstraction and its implementation should be defined and extended independently from each other.
-- A compile-time binding between an abstraction and its implementation should be avoided so that an implementation can be selected at run-time.
+- A compile-time binding between an abstraction and its implementation should be avoided so that an implementation can be selected at run-time.<sup>[2](https://en.wikipedia.org/wiki/Bridge_pattern#:~:text=An%20abstraction%20and,at%20run%2Dtime.)</sup>
 
-When using subclassing, different subclasses implement an abstract class in different ways. But an implementation is bound to the abstraction at compile-time and cannot be changed at run-time.
+## [When to Use Bridge Method Design Pattern?](https://www.geeksforgeeks.org/bridge-method-design-pattern-in-java/#:~:text=maintainable%20and%20understandable.-,When%20to%20Use%20Bridge%20Method%20Design%20Pattern,-in%20Java)
+- When you need to avoid a permanent binding between an abstraction and its implementation;
+- When both the abstraction and implementation should be extensible through subclassing;
+- When changes in the implementation of an abstraction should not impact the clients;
+- When you want to share an implementation among multiple objects and hide implementation details from the clients.
 
-Bridge pattern describe next solution:
-- Separate an abstraction (`Abstraction`) from its implementation (`Implementor`) by putting them in separate class hierarchies.
-- Implement the `Abstraction` in terms of (by delegating to) an `Implementor` object.
+## [Key Components of the Bridge Pattern](https://medium.com/@thecodebean/bridge-design-pattern-implementation-in-java-f71c853979fe#:~:text=Key%20Components%20of%20the%20Bridge%20Pattern)
+- **Abstraction**. This is the high-level interface that defines the abstract methods or operations that the clients will use;
+- **Implementor**. This is the interface or abstract class that defines the methods that the concrete implementors must implement;
+- **Concrete Abstraction**. These are concrete classes that extend the Abstraction and use an Implementor to perform specific operations;
+- **Concrete Implementor**. These are concrete classes that implement the Implementor interface and provide actual implementations of the methods defined in the Implementor.
 
-This enables to configure an `Abstraction` with an `Implementor` object at run-time.
-
-## Example
-Suppose we have `Color` interface:
+## [Example](https://www.javaguides.net/2023/10/bridge-design-pattern-in-kotlin.html#:~:text=Implementation%20in%20Kotlin%20Programming)
 ```
-public interface Color {
-    void applyColor();
+// Implementor
+interface Color {
+    fun applyColor(): String
 }
-```
-
-And a few implementation on `Color` interface (`RedColor`, `YellowColor`, `GreenColor`):
-```
-public final class RedColor implements Color {
-
-    @Override
-    public void applyColor() {
-        System.out.println("red color");
-    }
+class RedColor : Color {
+    override fun applyColor() = "Red"
 }
-```
-
-```
-public final class YellowColor implements Color {
-    @Override
-    public void applyColor() {
-        System.out.println("yellow color");
-    }
+class BlueColor : Color {
+    override fun applyColor() = "Blue"
 }
-```
-
-```
-public final class GreenColor implements Color {
-
-    @Override
-    public void applyColor() {
-        System.out.println("green color");
-    }
+// Abstraction
+abstract class Shape(protected val color: Color) {
+    abstract fun draw(): String
 }
-```
-
-Also we have `Shape` class:
-```
-public abstract class Shape {
-
-    private final Color color;
-
-    Shape(Color color) {
-        this.color = color;
-    }
-
-    protected Color withColor() {
-        return this.color;
-    }
-
-    abstract public void draw();
+class Circle(color: Color) : Shape(color) {
+    override fun draw() = "Circle drawn in ${color.applyColor()} color"
 }
-```
-
-And a few childs on `Shape` interface (`Triangle`, `Square`):
-
-```
-public final class Triangle extends Shape {
-
-    Triangle(Color color) {
-        super(color);
-    }
-
-    @Override
-    public void draw() {
-        System.out.print("Draws triangle with ");
-        super.withColor().applyColor();
-    }
+class Square(color: Color) : Shape(color) {
+    override fun draw() = "Square drawn in ${color.applyColor()} color"
 }
-```
-
-```
-public final class Square extends Shape {
-
-    Square(Color color) {
-        super(color);
-    }
-
-    @Override
-    public void draw() {
-        System.out.print("Draws square with ");
-        super.withColor().applyColor();
-    }
-}
-```
-
-With the help of bridge pattern we decouple the interfaces from implementation (`Color` intreface and `Shape` class). `Shape` class takes an instance of `Color` interface implementator and runs its method. Objects are completely decoupled from one another.
-
-Finally, example of usage:
-```
-public class BridgeExample {
-
-    public void example() {
-        Shape redSquare = new Square(new RedColor());
-        Shape yellowTriangle = new Triangle(new YellowColor());
-        Shape greenSquare = new Square(new GreenColor());
-
-        redSquare.draw();
-        yellowTriangle.draw();
-        greenSquare.draw();
-    }
+fun main() {
+    val redCircle = Circle(RedColor())
+    val blueSquare = Square(BlueColor())
+    println(redCircle.draw())
+    println(blueSquare.draw())
 }
 ```
 
 Output:
 ```
-Draws square with red color
-Draws triangle with yellow color
-Draws square with green color
+Circle drawn in Red color
+Square drawn in Blue color
 ```
 
-## Conclusion
-- Bridge pattern decouple an abstraction from its implementation so that the two can vary independently;
-- It is used mainly for implementing platform independence feature;
-- It adds one more method level redirection to achieve the objective;
-- Publish abstraction interface in a separate inheritance hierarchy, and put the implementation in its own inheritance hierarchy;
-- Use bridge pattern to run-time binding of the implementation;
-- Use bridge pattern to map orthogonal class hierarchies;
-- Bridge is designed up-front to let the abstraction and the implementation vary independently;
+- `Color` is the implementor interface with different concrete classes like `RedColor` and `BlueColor`;
+- `Shape` is the abstraction that takes a `Color` as a parameter, which provides the concrete implementation of the color;
+- Concrete classes like `Circle` and `Square` extend `Shape` and use the provided color to draw themselves;
+- In the `main` function, we demonstrate the decoupled nature by drawing a red circle and a blue square without having specific classes for each combination.
+
+## [Advantages of Bridge Method Design Pattern](https://www.geeksforgeeks.org/bridge-method-design-pattern-in-java/#:~:text=the%20operationImpl()%20method.-,Advantages%20of%20Bridge%20Method%20Design%20Pattern,-in%20Java)
+- **Decoupling Abstraction and Implementation**. The pattern decouples the abstraction from its implementation, allowing them to be developed and modified independently;
+- **Improved Extensibility**. It is easier to extend both abstraction and implementation hierarchies independently;
+- **Enhanced Flexibility**. The pattern allows changing the implementation without modifying the abstraction and vice versa;
+- **Simplified Code Maintenance**. By separating the concerns, the code becomes more maintainable and understandable.
 
 # Links
-[Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)  
-[Bridge Design Pattern](https://www.geeksforgeeks.org/bridge-design-pattern/)
+[Software Design Pattern: Bridge Pattern](https://dev.to/jps27cse/software-design-pattern-bridge-pattern-43f8)
+
+[Bridge Design Pattern: Implementation in Java](https://medium.com/@thecodebean/bridge-design-pattern-implementation-in-java-f71c853979fe)
+
+[Bridge Design Pattern in Kotlin](https://www.javaguides.net/2023/10/bridge-design-pattern-in-kotlin.html)
+
+[Bridge Method Design Pattern in Java](https://www.geeksforgeeks.org/bridge-method-design-pattern-in-java/)
+
+# Further reading
+[Bridge Pattern](https://springframework.guru/gang-of-four-design-patterns/bridge-pattern/)
+
+[Bridge](https://refactoring.guru/design-patterns/bridge)
+
+[Bridge Design Pattern in Android](https://medium.com/@manishkumar_75473/bridge-design-pattern-in-android-66cfc67e36fd)
+
+[Mastering the Bridge Design Pattern in Kotlin: A Comprehensive Guide](https://softaai.com/mastering-the-bridge-design-pattern-in-kotlin/)
+
+[Bridge Software Pattern Kotlin Examples](https://softwarepatterns.com/kotlin/bridge-software-pattern-kotlin-example)
