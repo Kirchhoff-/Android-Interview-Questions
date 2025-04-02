@@ -1,178 +1,123 @@
 # Abstract factory pattern
-
-The book **Design Patterns: Elements of Reusable Object-Oriented Software** states that an Abstract Factory "provides an interface for creating families of related or dependent objects without specifying their concrete classes". In other words, this model allows us to create objects that follow a general pattern.
-
-The Abstract Factory design pattern solves problems like:
+The Abstract Factory is a software design pattern whose goal is to provide a single interface to create families of objects with the same theme but without exposing the concrete implementation<sup>[1](https://www.baeldung.com/kotlin/abstract-factory-pattern#:~:text=The%20Abstract%20Factory%20is%20a%20software%20design%20pattern%20whose%20goal%20is%20to%20provide%20a%20single%20interface%20to%20create%20families%20of%20objects%20with%20the%20same%20theme%20but%20without%20exposing%20the%20concrete%20implementation.)</sup>. It may be used to solve problems such as<sup>[2](https://en.wikipedia.org/wiki/Abstract_factory_pattern#:~:text=It%20may%20be,objects%20be%20created%3F)</sup>:
 - How can an application be independent of how its objects are created?
-- How can a class be independent of how the objects it requires are created?
+- How can a class be independent of how the objects that it requires are created?
 - How can families of related or dependent objects be created?
 
-Creating objects directly within the class that requires the objects is inflexible because it commits the class to particular objects and makes it impossible to change the instantiation later independently from (without having to change) the class. It stops the class from being reusable if other objects are required, and it makes the class hard to test because real objects cannot be replaced with mock objects.
+Creating objects directly within the class that requires the objects is inflexible. Doing so commits the class to particular objects and makes it impossible to change the instantiation later without changing the class. It prevents the class from being reusable if other objects are required, and it makes the class difficult to test because real objects cannot be replaced with mock objects.
 
-The Abstract Factory design pattern describes how to solve such problems:
-- Encapsulate object creation in a separate (factory) object. That is, define an interface (AbstractFactory) for creating objects, and implement the interface.
-- A class delegates object creation to a factory object instead of creating objects directly.
+A factory is the location of a concrete class in the code at which objects are constructed. Implementation of the pattern intends to insulate the creation of objects from their usage and to create families of related objects without depending on their concrete classes. This allows for new derived types to be introduced with no change to the code that uses the base class.<sup>[3](https://en.wikipedia.org/wiki/Abstract_factory_pattern#:~:text=Creating%20objects%20directly,base%20class.)</sup>
 
-This makes a class independent of how its objects are created (which concrete classes are instantiated). A class can be configured with a factory object, which it uses to create objects, and even more, the factory object can be exchanged at run-time.
+The pattern describes how to solve such problems<sup>[4](https://en.wikipedia.org/wiki/Abstract_factory_pattern#:~:text=The%20pattern%20describes,creating%20objects%20directly.):
+- Encapsulate object creation in a separate (factory) object by defining and implementing an interface for creating objects;
+- Delegate object creation to a factory object instead of creating objects directly.
 
-Example:
+This makes a class independent of how its objects are created. A class may be configured with a factory object, which it uses to create objects, and the factory object can be exchanged at runtime.<sup>[5](https://en.wikipedia.org/wiki/Abstract_factory_pattern#:~:text=This%20makes%20a%20class%20independent%20of%20how%20its%20objects%20are%20created.%20A%20class%20may%20be%20configured%20with%20a%20factory%20object%2C%20which%20it%20uses%20to%20create%20objects%2C%20and%20the%20factory%20object%20can%20be%20exchanged%20at%20runtime.)
 
-We have `ManufacturerCountry` enum:
+When to Use Abstract Factory Pattern<sup>[6](https://www.baeldung.com/java-abstract-factory-pattern#:~:text=When%20to%20Use,a%20particular%20dependency)</sup>?
+- The client is independent of how we create and compose the objects in the system;
+- The system consists of multiple families of objects, and these families are designed to be used together;
+- We need a run-time value to construct a particular dependency.
+
+## [Example](https://www.javaguides.net/2023/10/abstract-factory-design-pattern-in-kotlin.html#:~:text=6.%20Implementation%20in%20Kotlin%20Programming)
+Implementation Steps <sup>[7](https://www.javaguides.net/2023/10/abstract-factory-design-pattern-in-kotlin.html#:~:text=Implementation%20Steps,specific%20UI%20components.)</sup>:
+- Define abstract product interfaces for different types of UI components (e.g., Button, Window).
+- Define concrete product classes for each product type and theme.
+- Define an abstract factory interface that declares creation methods for each product type.
+- Implement concrete factories for each theme that produce theme-specific UI components.
 
 ```
-public enum ManufacturerCountry {
-    USA, JAPAN
+// Abstract product interfaces
+interface Button {
+    fun display(): String
+}
+interface Window {
+    fun display(): String
+}
+// Concrete products for Light theme
+class LightButton : Button {
+    override fun display() = "Displaying Light Theme Button"
+}
+class LightWindow : Window {
+    override fun display() = "Displaying Light Theme Window"
+}
+// Concrete products for Dark theme
+class DarkButton : Button {
+    override fun display() = "Displaying Dark Theme Button"
+}
+class DarkWindow : Window {
+    override fun display() = "Displaying Dark Theme Window"
+}
+// Abstract Factory
+interface GUIFactory {
+    fun createButton(): Button
+    fun createWindow(): Window
+}
+// Concrete factories
+class LightThemeFactory : GUIFactory {
+    override fun createButton() = LightButton()
+    override fun createWindow() = LightWindow()
+}
+class DarkThemeFactory : GUIFactory {
+    override fun createButton() = DarkButton()
+    override fun createWindow() = DarkWindow()
+}
+fun main() {
+    // Client code using the Abstract Factory
+    val lightFactory: GUIFactory = LightThemeFactory()
+    val lightButton: Button = lightFactory.createButton()
+    println(lightButton.display())
+    val lightWindow: Window = lightFactory.createWindow()
+    println(lightWindow.display())
+    val darkFactory: GUIFactory = DarkThemeFactory()
+    val darkButton: Button = darkFactory.createButton()
+    println(darkButton.display())
+    val darkWindow: Window = darkFactory.createWindow()
+    println(darkWindow.display())
 }
 ```
 
-and two interfaces - `Car` and `Motorcycle`
-
+output:
 ```
-public interface Car {
-    String info();
-}
-```
-
-```
-public interface Motorcycle {
-    String info();
-}
+Displaying Light Theme Button
+Displaying Light Theme Window
+Displaying Dark Theme Button
+Displaying Dark Theme Window
 ```
 
-And different implementations of this interfaces:
+Explanation<sup>[8](https://www.javaguides.net/2023/10/abstract-factory-design-pattern-in-kotlin.html#:~:text=Explanation%3A,the%20chosen%20theme.)</sup>:
+- `Button` and `Window` are abstract product interfaces representing UI components;
+- `LightButton`, `LightWindow`, `DarkButton`, and `DarkWindow` are concrete implementations of these products, tailored for specific themes;
+- `GUIFactory` is the Abstract Factory interface which declares methods for creating products;
+- `LightThemeFactory` and `DarkThemeFactory` are concrete factories that instantiate theme-specific UI components;
+- The client code (`main` function) uses an abstract factory to create UI components, ensuring they match the chosen theme.
 
-```
-public class UsaCar implements Car {
-    @Override
-    public String info() {
-        return "USA car info";
-    }
-}
-```
+## [Pros and Cons](https://swiftlynomad.medium.com/the-abstract-factory-pattern-in-swift-a-comprehensive-guide-5b018c2b1831#:~:text=your%20client%20code.-,Pros%20and%20Cons,-Pros%3A)
+Pros:
+- Ensures that created objects are compatible and belong to the same family;
+- Promotes decoupling, making it easier to introduce new families of objects without modifying existing code;
+- Enforces a consistent interface for creating objects, enhancing maintainability and readability.
 
-```
-public class UsaMotorcycle implements Motorcycle {
-    @Override
-    public String info() {
-        return "USA motorcycle info";
-    }
-}
-```
+Cons:
+- Can lead to a large number of concrete classes if there are many families of objects;
+- Can be overly complex for simple systems.
 
-```
-public class JapanCar implements Car {
-    @Override
-    public String info() {
-        return "Japan car info";
-    }
-}
-```
+# Links
+[Abstract Factory Pattern in Kotlin](https://www.baeldung.com/kotlin/abstract-factory-pattern)
 
-```
-public class JapanMotorcycle implements Motorcycle {
-    @Override
-    public String info() {
-        return "Japan motorcycle info";
-    }
-}
-```
+[Abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
 
-Then let's create abstract factory, which is known about all vehicle types:
-```
-public interface VehicleFactory {
-    Motorcycle createMotorcycle();
-    Car createCar();
-}
-```
+[Abstract Factory Pattern in Java](https://www.baeldung.com/java-abstract-factory-pattern)
 
-And two implementations of `VehicleFactory` interface - `UsaVehicleFactory` and `JapanVehicleFactory`:
-```
-public class UsaVehicleFactory implements VehicleFactory {
-    @Override
-    public Motorcycle createMotorcycle() {
-        return new UsaMotorcycle();
-    }
+[Abstract Factory Design Pattern in Kotlin](https://www.javaguides.net/2023/10/abstract-factory-design-pattern-in-kotlin.html)
 
-    @Override
-    public Car createCar() {
-        return new UsaCar();
-    }
-}
-```
+[The Abstract Factory Pattern in Swift: A Comprehensive Guide](https://swiftlynomad.medium.com/the-abstract-factory-pattern-in-swift-a-comprehensive-guide-5b018c2b1831)
 
-```
-public class JapanVehicleFactory implements VehicleFactory {
-    @Override
-    public Motorcycle createMotorcycle() {
-        return new JapanMotorcycle();
-    }
+# Further reading
+[Abstract Factory Design Pattern](https://sourcemaking.com/design_patterns/abstract_factory)
 
-    @Override
-    public Car createCar() {
-        return new JapanCar();
-    }
-}
-```
+[Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory)
 
-Then create `AbstractVehicleFactory` class which is using a factory and created car and motorcycle.
-```
-public class AbstractVehicleFactory implements VehicleFactory {
+[Abstract Factory Software Pattern Kotlin Examples](https://softwarepatterns.com/kotlin/abstract-factory-software-pattern-kotlin-example)
 
-    VehicleFactory factory;
-
-    public AbstractVehicleFactory(ManufacturerCountry country) {
-        if (country == ManufacturerCountry.JAPAN) {
-            factory = new JapanVehicleFactory();
-        } else {
-            factory = new UsaVehicleFactory();
-        }
-    }
-
-    @Override
-    public Motorcycle createMotorcycle() {
-        return factory.createMotorcycle();
-    }
-
-    @Override
-    public Car createCar() {
-        return factory.createCar();
-    }
-}
-```
-
-and the final demo:
-```
-public class AbstractFactoryExample {
-
-    void example() {
-         AbstractVehicleFactory firstCreator = new AbstractVehicleFactory(ManufacturerCountry.JAPAN);
-         AbstractVehicleFactory secondCreator = new AbstractVehicleFactory(ManufacturerCountry.USA);
-
-         Log.d("TAG", "first car info = " + firstCreator.createCar().info());
-         Log.d("TAG", "second car info = " + secondCreator.createCar().info());
-         Log.d("TAG", "first motorcycle info = " + firstCreator.createMotorcycle().info());
-         Log.d("TAG", "second motorcycle info = " + secondCreator.createMotorcycle().info());
-    }
-}
-```
-
-Output:
-```
-D/TAG: first car info = Japan car info
-D/TAG: second car info = USA car info
-D/TAG: first motorcycle info = Japan motorcycle info
-D/TAG: second motorcycle info = USA motorcycle info
-```
-
-Advantages:
-- **Isolation of concrete classes**: The Abstract Factory pattern helps you control the classes of objects that an application creates. Because a factory encapsulates the responsibility and the process of creating product objects, it isolates clients from implementation classes. Clients manipulate instances through their abstract interfaces. Product class names are isolated in the implementation of the concrete factory; they do not appear in client code.
-- **Exchanging Product Families easily**: The class of a concrete factory appears only once in an application, that is where it’s instantiated. This makes it easy to change the concrete factory an application uses. It can use various product configurations simply by changing the concrete factory. Because an abstract factory creates a complete family of products, the whole product family changes at once.
-- **Promoting consistency among products**: When product objects in a family are designed to work together, it’s important that an application use objects from only one family at a time.
-
-Disadvantages:
-- **Difficult to support new kind of products**: Extending abstract factories to produce new kinds of Products isn’t easy. That’s because the AbstractFactory interface fixes the set of products that can be created. Supporting new kinds of products requires extending the factory interface, which involves changing the AbstractFactory class and all of its subclasses.
-
-## Links
-https://en.wikipedia.org/wiki/Abstract_factory_pattern  
-https://www.geeksforgeeks.org/abstract-factory-pattern/  
-https://www.baeldung.com/java-abstract-factory-pattern
+[Kotlin Abstract Factory](https://swiderski.tech/kotlin-abstract-factory/)
