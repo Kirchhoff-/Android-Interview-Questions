@@ -1,121 +1,97 @@
 # Memento pattern
-The memento pattern is a software design pattern that provides the ability to restore an object to its previous state (undo via rollback). 
-The Memento design pattern defines three distinct roles:
-- *Originator* - the object that knows how to save itself.
-- *Caretaker* - the object that knows why and when the Originator needs to save and restore itself.
-- *Memento* - the lock box that is written and read by the Originator, and shepherded by the Caretaker.
+The Memento design pattern is a powerful behavioral pattern that provides a way to capture and restore an object’s internal state. It allows objects to be saved and restored without violating encapsulation principles.<sup>[1](https://neatcode.org/memento-pattern/#:~:text=The%20Memento%20design%20pattern%20is%20a%20powerful%20behavioral%20pattern%20that%20provides%20a%20way%20to%20capture%20and%20restore%20an%20object%E2%80%99s%20internal%20state.%20It%20allows%20objects%20to%20be%20saved%20and%20restored%20without%20violating%20encapsulation%20principles.)</sup>
 
-The Memento design pattern solves problems like:
-- The internal state of an object should be saved externally so that the object can be restored to this state later.
-- The object's encapsulation must not be violated.
+The pattern consists of three main components: the **Originator**, the **Memento**, and the **Caretaker**:<sup>[2](https://neatcode.org/memento-pattern/#:~:text=The%20pattern%20consists,using%20Memento%20objects.)</sup>
+- **Originator**. The Originator is the object whose state we want to capture and restore. It creates a Memento object containing a snapshot of its current state or can restore its state from a Memento object;
+- **Memento**. The Memento is an object that stores the state of the Originator. It provides methods to retrieve the saved state and potentially modify it;
+- **Caretaker**. The Caretaker is responsible for storing and managing the Memento objects. It interacts with the Originator to save and restore its state using Memento objects.
 
-The problem is that a well designed object is encapsulated so that its representation (data structure) is hidden inside the object and can't be accessed from outside the object.
+When to use Memento Design Pattern:<sup>[3](https://www.geeksforgeeks.org/memento-design-pattern/#:~:text=content%0AMore%20content-,When%20to%20use%20Memento%20Design%20Pattern%3F,reduce%20duplicate%20calculations%20or%20enhance%20efficiency%20by%20caching%20an%20object%27s%20state.,-When%20not%20to)</sup>
+- **Undo functionality**. When your application needs to include an undo function that lets users restore the state of an object after making modifications;
+- **Snapshotting**. When you need to enable features like versioning or checkpoints by saving an object's state at different times;
+- **Transaction rollback**. When there are failures or exceptions, like in database transactions, and you need to reverse changes made to an object's state;
+- **Caching**. When you wish to reduce duplicate calculations or enhance efficiency by caching an object's state.
 
-The Memento design pattern describes how to solve such problems, make an object (originator) itself responsible for:
-- saving its internal state to a (memento) object and
-- restoring to a previous state from a (memento) object.
+## [Example](https://www.javaguides.net/2023/10/memento-design-pattern-in-kotlin.html#google_vignette:~:text=6.%20Implementation%20in%20Kotlin%20Programming)
+Implementation Steps:<sup>[4](https://www.javaguides.net/2023/10/memento-design-pattern-in-kotlin.html#google_vignette:~:text=Implementation%20Steps,undo%20and%20redo.)</sup>
+- Create the `Memento` class to store the internal state of the `Originator`;
+- The `Originator` class should have methods to save its state to a memento and restore its state from a memento;
+- Implement a `Caretaker` class that maintains a list of mementos for the purpose of undo and redo.
 
-## Example
-Create the `Memento` class:
 ```
-public final class Memento {
-    
-    private String state;
-    
-    public Memento(String state) {
-        this.state = state;
+// Step 1: Memento class
+data class Memento(val state: String)
+// Step 2: Originator class
+class Originator(var state: String) {
+    fun createMemento(): Memento {
+        return Memento(state)
     }
-    
-    public String getState() { 
-        return state;
+    fun restore(memento: Memento) {
+        state = memento.state
     }
 }
-```
-
-than create `Originator` class:
-
-```
-public final class Originator {
-    private String currentState;
-
-    public void setState(String state) {
-        this.currentState = state;
+// Step 3: Caretaker class
+class Caretaker {
+    private val mementoList = mutableListOf<Memento>()
+    fun saveState(originator: Originator) {
+        mementoList.add(originator.createMemento())
     }
-
-    public String getState() {
-        return currentState;
+    fun undo(originator: Originator) {
+        if (mementoList.isNotEmpty()) {
+            val memento = mementoList.removeAt(mementoList.size - 1)
+            originator.restore(memento)
+        }
     }
-
-    public Memento saveState() {
-        return new Memento(currentState);
-    }
-    
-    public void restoreState(Memento memento) {
-        currentState = memento.getState();
-    }
+    // More methods like redo can be added similarly
 }
-```
-
-And create the class `Caretaker` which will be hold instances of `Memento` class:
-```
-import java.util.ArrayList;
-import java.util.List;
-
-public final class Caretaker {
-    private List<Memento> mementoList = new ArrayList<>();
-
-    public void add(Memento state) {
-        mementoList.add(state);
-    }
-
-    public Memento get(int index) {
-        return mementoList.get(index);
-    }
-}
-```
-
-Example of usage:
-```
-public final class MementoDemo {
-
-    public void mementoExample() {
-        Originator originator = new Originator();
-        Caretaker caretaker = new Caretaker();
-        
-        originator.setState("State 1");
-        originator.setState("State 2");
-        caretaker.add(originator.saveState());
-        
-        originator.setState("State 3");
-        caretaker.add(originator.saveState());
-        
-        originator.setState("State 4");
-        System.out.println("Current State = " + originator.getState());
-        
-        originator.restoreState(caretaker.get(0));
-        System.out.println("First saved state = " + originator.getState());
-        
-        originator.restoreState(caretaker.get(1));
-        System.out.println("Second saved state = " + originator.getState());
-    }
+// Client Code
+fun main() {
+    val originator = Originator("Initial State")
+    val caretaker = Caretaker()
+    caretaker.saveState(originator)
+    originator.state = "State #1"
+    caretaker.saveState(originator)
+    originator.state = "State #2"
+    println("Current State: ${originator.state}")
+    caretaker.undo(originator)
+    println("After undo: ${originator.state}")
 }
 ```
 
 Output:
 ```
-Current State = State 4
-First saved state = State 2
-Second saved state = State 3
+Current State: State #2
+After undo: State #1
 ```
 
-Advantages:
-- We can use Serialization to achieve memento pattern implementation that is more generic rather than Memento pattern where every object needs to have it’s own Memento class implementation.
+Explanation:<sup>[5](https://www.javaguides.net/2023/10/memento-design-pattern-in-kotlin.html#google_vignette:~:text=Explanation%3A,undo%20and%20redo.)</sup>
+- The `Memento` captures the internal state of the `Originator` without violating its encapsulation;
+- The `Originator` can save and restore its state using the memento;
+- The `Caretaker` provides a mechanism to keep track of multiple mementos, allowing for functionalities like undo and redo.
 
-Disadvantage:
-- If Originator object is very huge then Memento object size will also be huge and use a lot of memory.
+## [Pros and Cons](https://dev.to/diegosilva13/understanding-the-memento-design-pattern-in-java-2c72#:~:text=Pros%20and%20Cons,to%20the%20system.)
+Pros:
+- **Preserves Encapsulation**. Allows an object's internal state to be saved and restored without exposing its implementation details;
+- **Simple Undo/Redo**. Facilitates the implementation of undo/redo functionality, making the system more robust and user-friendly;
+- **State History**. Allows maintaining a history of previous states of the object, enabling navigation between different states.
 
-## Links
-https://en.wikipedia.org/wiki/Memento_pattern  
-https://sourcemaking.com/design_patterns/memento  
-https://www.geeksforgeeks.org/memento-design-pattern/  
-https://www.journaldev.com/1734/memento-design-pattern-java
+Cons:
+- **Memory Consumption**. Storing multiple mementos can consume significant memory, especially if the object's state is large;
+- **Additional Complexity**. Introduces additional complexity to the code, with the need to manage the creation and restoration of mementos;
+- **Caretaker Responsibility**. The caretaker needs to manage mementos efficiently, which can add responsibility and complexity to the system.
+
+# Links
+[Memento Design Pattern – Implement Undo/Redo Functionality](https://neatcode.org/memento-pattern/)
+
+[Memento Design Pattern](https://www.geeksforgeeks.org/memento-design-pattern/)
+
+[Memento Design Pattern in Kotlin](https://www.javaguides.net/2023/10/memento-design-pattern-in-kotlin.html#google_vignette)
+
+[Understanding the Memento Design Pattern in Java](https://dev.to/diegosilva13/understanding-the-memento-design-pattern-in-java-2c72)
+
+# Further reading
+[Memento Design Pattern](https://sourcemaking.com/design_patterns/memento)
+
+[Memento](https://refactoring.guru/design-patterns/memento)
+
+[Memento Software Pattern Kotlin Examples](https://softwarepatterns.com/kotlin/memento-software-pattern-kotlin-example)
