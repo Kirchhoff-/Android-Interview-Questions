@@ -1,103 +1,104 @@
 # Strategy pattern
-Strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use. Strategy lets the algorithm vary independently from clients that use it. Deferring the decision about which algorithm to use until runtime allows the calling code to be more flexible and reusable.
+The Strategy Design Pattern is a behavioral design pattern that allows you to define a family of algorithms or behaviors, put each of them in a separate class, and make them interchangeable at runtime. This pattern is useful when you want to dynamically change the behavior of a class without modifying its code.<sup>[1](https://www.geeksforgeeks.org/system-design/strategy-pattern-set-1/#:~:text=The%20Strategy%20Design%20Pattern%20is,class%20without%20modifying%20its%20code.)</sup>
 
-For instance, a class that performs validation on incoming data may use the strategy pattern to select a validation algorithm depending on the type of data, the source of the data, user choice, or other discriminating factors. These factors are not known until run-time and may require radically different validation to be performed. The validation algorithms (strategies), encapsulated separately from the validating object, may be used by other validating objects in different areas of the system (or even different systems) without code duplication.
+This pattern exhibits several key characteristics, such as:<sup>[2](https://www.geeksforgeeks.org/system-design/strategy-pattern-set-1/#:~:text=This%20pattern%20exhibits,a%20strategy%20object.)</sup>
+- **Defines a family of algorithms**. The pattern allows you to encapsulate multiple algorithms or behaviors into separate classes, known as strategies;
+- **Encapsulates behaviors**. Each strategy encapsulates a specific behavior or algorithm, providing a clean and modular way to manage different variations or implementations;
+- **Enables dynamic behavior switching**. The pattern enables clients to switch between different strategies at runtime, allowing for flexible and dynamic behavior changes;
+- **Promotes object collaboration**. The pattern encourages collaboration between a context object and strategy objects, where the context delegates the execution of a behavior to a strategy object.
 
-## Example
+The Strategy Design Pattern can be useful in various scenarios, such as:<sup>[3](https://www.freecodecamp.org/news/a-beginners-guide-to-the-strategy-design-pattern/#:~:text=The%20Strategy%20Design%20Pattern%20can%20be,object%20that%20needs%20to%20process%20payments.)</sup>
+- **Sorting algorithms**. Different sorting algorithms can be encapsulated into separate strategies and passed to an object that needs sorting;
+- **Validation rules**. Different validation rules can be encapsulated into separate strategies and passed to an object that needs validation;
+- **Text formatting**. Different formatting strategies can be encapsulated into separate strategies and passed to an object that needs formatting;
+- **Database access**. Different database access strategies can be encapsulated into separate strategies and passed to an object that needs to access data from different sources;
+- **Payment strategy**. Different payment methods can be encapsulated into separate strategies and passed to an object that needs to process payments.
 
-Let's create `Discount` interface:
+Real-World Use Cases:<sup>[4](https://www.javaguides.net/2023/10/strategy-design-pattern-in-kotlin.html#google_vignette:~:text=4.%20Real%2DWorld,multiple%20payment%20strategies.)</sup>
+- Navigation  apps providing different routes based on travel mode: driving, biking, walking;
+- Image compression applications where users can choose different compression algorithms;
+- Payment gateways in e-commerce applications allow multiple payment strategies.
+
+## [Example](https://www.javaguides.net/2023/10/strategy-design-pattern-in-kotlin.html#google_vignette:~:text=6.%20Implementation%20in%20Kotlin%20Programming)
+Implementation Steps:<sup>[5](https://www.javaguides.net/2023/10/strategy-design-pattern-in-kotlin.html#google_vignette:~:text=5.%20Implementation%20Steps,switch%20between%20strategies.)</sup>
+- Define a strategy interface common to all supported algorithms;
+- Implement concrete strategies for the various algorithms;
+- Define a context class to maintain a reference to a strategy object and switch between strategies.
+
 ```
-public interface Discount {
-    double applyDiscount(double initialPrice);
+// Step 1: Strategy Interface
+interface RouteStrategy {
+    fun buildRoute(start: String, destination: String): String
 }
-```
-
-and its several implementations (`RegularCustomerDiscount`, `PremiumCustomerDiscount`, `ChristmasDiscount`):
-```
-public final class RegularCustomerDiscount implements Discount {
-
-    private final static double DISCOUNT_COEFFICIENT = 1;
-
-    @Override
-    public double applyDiscount(double initialPrice) {
-        return initialPrice * DISCOUNT_COEFFICIENT;
+// Step 2: Concrete Strategies
+class DrivingStrategy : RouteStrategy {
+    override fun buildRoute(start: String, destination: String): String {
+        return "Driving route from $start to $destination"
     }
 }
-```
-
-```
-public final class PremiumCustomerDiscount implements Discount {
-
-    private final static double DISCOUNT_COEFFICIENT = 0.95;
-
-    @Override
-    public double applyDiscount(double initialPrice) {
-        return initialPrice * DISCOUNT_COEFFICIENT;
+class WalkingStrategy : RouteStrategy {
+    override fun buildRoute(start: String, destination: String): String {
+        return "Walking route from $start to $destination"
     }
 }
-```
-
-```
-public final class ChristmasDiscount implements Discount {
-
-    private final static double DISCOUNT_COEFFICIENT = 0.8;
-
-    @Override
-    public double applyDiscount(double initialPrice) {
-        return initialPrice * DISCOUNT_COEFFICIENT;
+// Step 3: Context Class
+class Navigator(private var strategy: RouteStrategy) {
+    fun setStrategy(newStrategy: RouteStrategy) {
+        strategy = newStrategy
+    }
+    fun buildRoute(start: String, destination: String): String {
+        return strategy.buildRoute(start, destination)
     }
 }
-```
-
-after that, we can apply different discount for customer in runtime, for example:
-```
-public final class StrategyExample {
-
-    public void example() {
-        Customer regularCustomer = new Customer(new RegularCustomerDiscount());
-        Customer premiumCustomer = new Customer(new PremiumCustomerDiscount());
-
-        regularCustomer.addToBill(2, 20);
-        regularCustomer.addToBill(3, 30);
-        regularCustomer.addToBill(4, 40);
-
-        premiumCustomer.addToBill(2, 20);
-        premiumCustomer.addToBill(3, 30);
-        premiumCustomer.addToBill(4, 40);
-
-        System.out.println("Bill sum for regular customer = " + regularCustomer.getResultBillSum());
-        System.out.println("Bill sum for premium customer = " + premiumCustomer.getResultBillSum());
-
-        regularCustomer.applyNewDiscount(new ChristmasDiscount());
-        premiumCustomer.applyNewDiscount(new ChristmasDiscount());
-
-        System.out.println("Bill sum for regular customer (with christmas discount) = " + regularCustomer.getResultBillSum());
-        System.out.println("Bill sum for premium customer (with christmas discount) = " + premiumCustomer.getResultBillSum());
-    }
+// Client Code
+fun main() {
+    val navigator = Navigator(DrivingStrategy())
+    println(navigator.buildRoute("Point A", "Point B"))
+    navigator.setStrategy(WalkingStrategy())
+    println(navigator.buildRoute("Point A", "Point B"))
 }
 ```
 
 Output:
 ```
-Bill sum for regular customer = 290.0
-Bill sum for premium customer = 275.5
-Bill sum for regular customer (with christmas discount) = 232.0
-Bill sum for premium customer (with christmas discount) = 232.0
+Driving route from Point A to Point B
+Walking route from Point A to Point B
 ```
 
-## Conclusion
-Advantages:
-- A family of algorithms can be defined as a class hierarchy and can be used interchangeably to alter application behavior without changing its architecture.
-- By encapsulating the algorithm separately, new algorithms complying with the same interface can be easily introduced.
-- The application can switch strategies at run-time.
-- Strategy enables the clients to choose the required algorithm, without using a "switch" statement or a series of "if-else" statements.
-- Data structures used for implementing the algorithm are completely encapsulated in Strategy classes. Therefore, the implementation of an algorithm can be changed without affecting the Context class.
+Explanation:<sup>[6](https://www.javaguides.net/2023/10/strategy-design-pattern-in-kotlin.html#google_vignette:~:text=Explanation%3A,the%20navigator%27s%20implementation.)</sup>
+- `RouteStrategy` defines a contract that all strategies (algorithms) must follow;
+- Concrete strategies (`DrivingStrategy`, `WalkingStrategy`) encapsulate the specific algorithms;
+- `Navigator`, the context class, maintains a reference to a strategy object and can switch between strategies using `setStrategy`;
+- The client can use the `Navigator` class and easily switch between different routing strategies without changing the navigator's implementation.
 
-Disadvantages:
-- The application must be aware of all the strategies to select the right one for the right situation.
-- Context and the Strategy classes normally communicate through the interface specified by the abstract Strategy base class. Strategy base class must expose interface for all the required behaviours, which some concrete Strategy classes might not implement.
-- In most cases, the application configures the Context with the required Strategy object. Therefore, the application needs to create and maintain two objects in place of one.
+## Pros and Cons
+Pros:<sup>[7](https://blog.evanemran.info/understanding-the-strategy-pattern-in-android-development#:~:text=the%20existing%20code.-,Benefits%20of%20Using%20the%20Strategy%20Pattern,in%20separate%20classes%20makes%20the%20codebase%20easier%20to%20maintain%20and%20extend.,-Drawbacks%20of%20the)</sup>
+- Eliminates Conditional Logic: Reduces the need for complex conditional statements, making the code cleaner and more readable;
+- Enhances Flexibility: Allows for easy addition or modification of algorithms without affecting the client code;
+- Promotes Reusability: Each algorithm is a standalone class, promoting reuse in different parts of the application;
+- Improves Maintainability: Encapsulating algorithms in separate classes makes the codebase easier to maintain and extend.
 
-## Links
-https://en.wikipedia.org/wiki/Strategy_pattern  
-https://www.geeksforgeeks.org/strategy-pattern-set-1/
+Cons:<sup>[8](https://blog.evanemran.info/understanding-the-strategy-pattern-in-android-development#:~:text=maintain%20and%20extend.-,Drawbacks%20of%20the%20Strategy%20Pattern,introduce%20overhead%20in%20scenarios%20where%20a%20simple%20conditional%20statement%20would%20suffice.,-Implementing%20the%20Strategy)</sup>
+- Increased Number of Classes: Each algorithm requires a separate class, which can lead to an increase in the number of classes;
+- Complexity: The pattern can introduce complexity, especially when there are numerous strategies;
+- Overhead: The pattern may introduce overhead in scenarios where a simple conditional statement would suffice.
+
+# Links
+[Strategy Design Pattern](https://www.geeksforgeeks.org/system-design/strategy-pattern-set-1/)
+
+[A Beginner's Guide to the Strategy Design Pattern](https://www.freecodecamp.org/news/a-beginners-guide-to-the-strategy-design-pattern/)
+
+[Strategy Design Pattern in Kotlin](https://www.javaguides.net/2023/10/strategy-design-pattern-in-kotlin.html#google_vignette)
+
+[Understanding the Strategy Pattern in Android Development](https://blog.evanemran.info/understanding-the-strategy-pattern-in-android-development)
+
+# Further reading
+[Strategy Design Pattern](https://sourcemaking.com/design_patterns/strategy)
+
+[Strategy](https://refactoring.guru/design-patterns/strategy)
+
+[Strategy Software Pattern Kotlin Examples](https://softwarepatterns.com/kotlin/strategy-software-pattern-kotlin-example)
+
+[Strategy Pattern in Kotlin](https://swiderski.tech/kotlin-strategy-pattern/)
+
+[The Strategy Pattern](https://ersantana.com/coding/kotlin/design-patterns/strategy_pattern)
