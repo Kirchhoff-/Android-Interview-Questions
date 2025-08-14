@@ -1,122 +1,96 @@
 # Factory method pattern
-**Factory method pattern** is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+The Factory Method pattern is a creational design pattern that provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created. It defines a method for creating objects, which subclasses can then override to change the type of objects that will be created.<sup>[1](https://proandroiddev.com/zero-to-hero-in-android-kotlin-creational-design-patterns-a972375c352a#:~:text=The%20Factory%20Method%20pattern%20is%20a%20creational%20design%20pattern,change%20the%20type%20of%20objects%20that%20will%20be%20created.)</sup>
 
-The Factory Method design pattern solves problems like: 
-- How can an object be created so that subclasses can redefine which class to instantiate?
-- How can a class defer instantiation to subclasses?
+The factory method design pattern solves problems such as:<sup>[2](https://en.wikipedia.org/wiki/Factory_method_pattern#:~:text=The%20factory%20method%20design,directly%20calling%20a%20constructor.)</sup>
+- How can an object's subclasses redefine its subsequent and distinct implementation? The pattern involves creation of a factory method within the superclass that defers the object's creation to a subclass's factory method;
+- How can an object's instantiation be deferred to a subclass? Create an object by calling a factory method instead of directly calling a constructor.
 
-The Factory Method design pattern describes how to solve such problems:
-- Define a separate operation (*factory method*) for creating an object;
-- Create an object by calling a *factory method*.
+This enables the creation of subclasses that can change the way in which an object is created (for example, by redefining which class to instantiate).<sup>[3](https://en.wikipedia.org/wiki/Factory_method_pattern#:~:text=This%20enables%20the%20creation%20of%20subclasses%20that%20can%20change%20the%20way%20in%20which%20an%20object%20is%20created%20(for%20example%2C%20by%20redefining%20which%20class%20to%20instantiate).)</sup>
 
-This enables writing of subclasses to change the way an object is created (to redefine which class to instantiate).
+When to use Factory Method Design Pattern?<sup>[4](https://www.geeksforgeeks.org/java/factory-method-design-pattern-in-java/#:~:text=at%20the%20implementation.-,When%20to%20use%20Factory%20Method%20Design%20Pattern%3F,helper%20subclass%20is%20the%20delegate%20within%20a%20specific%20scope%20or%20location.,-Key%20Components%20of)</sup>
+- A class cannot predict the type of objects it needs to create;
+- A class wants its subclasses to specify the objects it creates;
+- Classes delegate responsibility to one of multiple helper subclasses, and you aim to keep the information about which helper subclass is the delegate within a specific scope or location.
 
-## Example
-This Kotlin example is similar to one in the book Design Patterns.
-
-The MazeGame uses Rooms but it puts the responsibility of creating Rooms to its subclasses which create the concrete classes. The regular game mode could use this template method.
-
-Let's create `Room` class:
+## [Example](https://www.javaguides.net/2023/10/factory-method-design-pattern-in-kotlin.html#:~:text=6.%20Generic%20Implementation%20in%20Kotlin%20Programming)
+Implementation Steps:<sup>[5](https://www.javaguides.net/2023/10/factory-method-design-pattern-in-kotlin.html#:~:text=5.%20Implementation%20Steps,the%20new%20keyword.)</sup>
+- Define an interface or abstract class with a factory method;
+- Concrete classes will implement or override this factory method to produce objects;
+- Clients will call the factory method instead of directly using the `new` keyword.
 
 ```
-abstract class Room {
-  abstract fun connect(room: Room)
+// Abstract product
+interface Product {
+    fun showProductType(): String
 }
-```
-
-After that create two inheritors of `Room` class:
-
-```
-class OrdinaryRoom: Room() {
-  override fun connect(room: Room) {}
-
-  override fun toString(): String {
-    return "OrdinaryRoom"
-  }
+// Concrete products
+class ConcreteProductA : Product {
+    override fun showProductType() = "Product Type A"
 }
-```
-
-```
-class MagicRoom: Room() {
-  override fun connect(room: Room) {}
-
-  override fun toString(): String {
-    return "MagicRoom"
-  }
+class ConcreteProductB : Product {
+    override fun showProductType() = "Product Type B"
 }
-```
-
-Then create `MazeGame` class, that will be base for all games:
-
-```
-abstract class MazeGame {
-  val rooms: MutableList<Room> = mutableListOf()
-  
-  init {
-    val room1 = makeRoom()
-    val room2 = makeRoom()
-    room1.connect(room2)
-    rooms.add(room1)
-    rooms.add(room2)
-  }
-  
-  abstract fun makeRoom(): Room
+// Creator class with the factory method
+abstract class Creator {
+    abstract fun factoryMethod(): Product
 }
-```
-
-Then create two inheritors of `MazeGame` class:
-```
-class MagicMazeGame: MazeGame() {
-  override fun makeRoom(): Room = MagicRoom()
+// Concrete creators that override the factory method
+class ConcreteCreatorA : Creator() {
+    override fun factoryMethod() = ConcreteProductA()
 }
-```
-
-```
-class OrdinaryMazeGame: MazeGame() {
-  override fun makeRoom(): Room = OrdinaryRoom()
+class ConcreteCreatorB : Creator() {
+    override fun factoryMethod() = ConcreteProductB()
 }
-```
-
-And finally example of usage:
-```
-class FactoryMethodExample {
-
-  fun example() {
-    val mazeGame1 = OrdinaryMazeGame()
-    val mazeGame2 = MagicMazeGame()
-
-    println("Rooms in game1:")
-    mazeGame1.rooms.forEach { println(it) }
-
-    println("Rooms in game2:")
-    mazeGame2.rooms.forEach { println(it) }
-  }
+fun main() {
+    // Client code
+    val creatorA: Creator = ConcreteCreatorA()
+    val productA: Product = creatorA.factoryMethod()
+    println(productA.showProductType())
+    val creatorB: Creator = ConcreteCreatorB()
+    val productB: Product = creatorB.factoryMethod()
+    println(productB.showProductType())
 }
 ```
 
 Output:
 ```
-Rooms in game1:
-OrdinaryRoom
-OrdinaryRoom
-Rooms in game2:
-MagicRoom
-MagicRoom
+Product Type A
+Product Type B
 ```
 
-## Conclusion
+Explanation:<sup>[6](https://www.javaguides.net/2023/10/factory-method-design-pattern-in-kotlin.html#:~:text=Explanation%3A,get%20the%20product.)</sup>
+- `Product` is an interface representing the abstract product;
+- `ConcreteProductA` and `ConcreteProductB` are concrete implementations of the `Product`;
+- `Creator` is an abstract class with an abstract `factoryMethod` which returns an object of type `Product`;
+- `ConcreteCreatorA` and `ConcreteCreatorB` are subclasses of `Creator` that override the `factoryMethod` to produce `ConcreteProductA` and `ConcreteProductB` respectively;
+- In the client code (`main` function), instead of directly instantiating the product, we use the concrete creators' `factoryMethod` to get the product.
 
-Advantage of Factory Design Pattern:
-- Factory Method Pattern allows the sub-classes to choose the type of objects to create;
-- The implementation only interacts with parent abstract class or interface. Therefore, it can work with any classes that implement that interface or that extends that abstract class.
+## Pros and Cons
+Pros:<sup>[7](https://www.geeksforgeeks.org/system-design/factory-method-for-designing-pattern/#:~:text=Advantages%20of%20the,clients%2C%20reducing%20dependency.)</sup>
+- Separates creation logic from client code, improving flexibility;
+- New product types can be added easily;
+- Simplifies unit testing by allowing mock class creation;
+- Centralizes object creation logic across the application;
+- Hides specific product classes from clients, reducing dependency.
 
-When to use Factory Design Pattern:
-- When a class doesn’t know which sub-class should create the instance;
-- When a class wants that its sub-classes should specify the objects to be created;
-- When the parent classes choose the creation of objects to its sub-classes;
-- When you want to offer your library’s users the ability to extend its internal components.
+Cons:<sup>[8](https://www.geeksforgeeks.org/system-design/factory-method-for-designing-pattern/#:~:text=Disadvantages%20of%20the,applied%20too%20broadly.)</sup>
+- Adds more classes and interfaces, which can complicate maintenance;
+- Slight performance impacts due to polymorphism;
+- Clients need knowledge of specific subclasses;
+- May lead to unnecessary complexity if applied too broadly.
 
 # Links
+[Zero To Hero in Android Kotlin Creational Design Patterns](https://proandroiddev.com/zero-to-hero-in-android-kotlin-creational-design-patterns-a972375c352a)
+
 [Factory method pattern](https://en.wikipedia.org/wiki/Factory_method_pattern)
 
-[Overview Of Factory Method Design Pattern](pattern)
+[Factory Method Design Pattern in Java](https://www.geeksforgeeks.org/java/factory-method-design-pattern-in-java/)
+
+[Factory Method Design Pattern in Kotlin](https://www.javaguides.net/2023/10/factory-method-design-pattern-in-kotlin.html)
+
+[Factory method Design Pattern](https://www.geeksforgeeks.org/system-design/factory-method-for-designing-pattern/)
+
+# Further reading
+[Factory Method Design Pattern](https://sourcemaking.com/design_patterns/factory_method)
+
+[Factory Method](https://refactoring.guru/design-patterns/factory-method)
