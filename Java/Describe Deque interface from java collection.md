@@ -81,7 +81,7 @@ While `Deque` implementations are not strictly required to prohibit the insertio
 # Links
 [Deque](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html)
 
-# Next Questions
+# Next questions
 [Describe Queue interface from java collection](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/Describe%20Queue%20interface%20from%20java%20collection.md)
 
 [What do you know about LinkedList?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20LinkedList.md)

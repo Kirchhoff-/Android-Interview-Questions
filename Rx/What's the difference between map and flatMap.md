@@ -60,5 +60,5 @@ Next item = C1 C2 C3
 
 [When do you use map vs flatMap in RxJava?](https://stackoverflow.com/questions/22847105/when-do-you-use-map-vs-flatmap-in-rxjava)
 
-# Next Questions
+# Next questions
 [Can you provide an example of transforming operators?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Rx/Give%20example%20of%20transforming%20operators.md)

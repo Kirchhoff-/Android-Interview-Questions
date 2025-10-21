@@ -30,7 +30,7 @@ Data encrypted with the recipient’s public key can only be decrypted with the 
 
 [What types of encryption are there?](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/security/encryption/what-types-of-encryption-are-there/)
 
-# Next Questions
+# Next questions
 [What do you know about symmetric key encryption?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/General/What%20do%20you%20know%20about%20Symmetric%20Key%20Encryption.md)
 
 [What do you know about asymmetric key encryption?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/General/What%20do%20you%20know%20about%20asymmetric%20key%20encryption.md)

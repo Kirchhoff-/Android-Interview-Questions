@@ -137,5 +137,5 @@ interface MyInterface {
 
 [Companion Objects](https://www.kotlinprimer.com/classes-what-kotlin-brings-to-the-table/objects/companion-objects/)
 
-# Next Questions
+# Next questions
 [What do you know about `object` keyword?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/Object%20keyword.md)

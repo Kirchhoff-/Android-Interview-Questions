@@ -85,7 +85,7 @@ public class MyActivity extends Activity {
 
 [Activity](https://developer.android.com/reference/android/app/Activity)
 
-# Next Questions
+# Next questions
 [Activity Lifecycle](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/Activity%20Lifecycle.md)
 
 [Launch modes](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/Launch%20modes.md)

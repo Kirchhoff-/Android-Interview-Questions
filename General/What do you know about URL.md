@@ -31,7 +31,7 @@ The resource name is the complete address to the resource. The format of the res
 
 [What Is a URL?](https://docs.oracle.com/javase/tutorial/networking/urls/definition.html)
 
-# Next Questions
+# Next questions
 [What do you know about URI?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/General/What%20do%20you%20know%20about%20URI.md)
 
 [What is the difference between HTTP and HTTPS?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/General/What%20is%20the%20difference%20between%20HTTP%20and%20HTTPS.md)

@@ -142,6 +142,6 @@ If one of the types that are extended by `T` is a class (e.g. `Number`), we have
 
 [Language Features of Java Generics](http://www.angelikalanger.com/GenericsFAQ/FAQSections/Features.html)
 
-# Next Questions
+# Next questions
 [What do you know about wildcard?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20do%20you%20know%20about%20wildcard.md)
 

@@ -81,5 +81,5 @@ println("$name, $age years of age")
 
 [Kotlin Data Class](https://www.digitalocean.com/community/tutorials/kotlin-data-class)
 
-# Next Questions
+# Next questions
 [What do you know about data objects?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/What%20do%20you%20know%20about%20data%20objects.md)

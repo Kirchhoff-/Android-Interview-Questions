@@ -86,5 +86,5 @@ Permissions granted in an `Intent` remain in effect while the stack of the recei
 # Links
 https://developer.android.com/reference/androidx/core/content/FileProvider
 
-# Next Questions
+# Next questions
 [What is ContentProvider?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20ContentProvider.md)
