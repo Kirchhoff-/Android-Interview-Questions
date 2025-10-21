@@ -197,7 +197,7 @@ Any exception thrown by the `finalize` method causes the finalization of this ob
 
 [Class Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html)
 
-# Next Questions
+# Next questions
 [`try`-`catch`-`finally`](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/try-catch-finally.md)
 
 [What is Java's Garbage Collection?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Java/What%20is%20Java's%20Garbage%20Collection.md)

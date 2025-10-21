@@ -192,7 +192,7 @@ Intent filters in Android have various use cases that enable your app to interac
 
 [Let’s be explicit about our intent(-filters)](https://medium.com/androiddevelopers/lets-be-explicit-about-our-intent-filters-c5dbe2dbdce0)
 
-# Next Questions
+# Next questions
 [What are Intents?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20are%20Intents.md)
 
 [What is `BroadcastReceiver`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What's%20BroadcastReceiver.md)

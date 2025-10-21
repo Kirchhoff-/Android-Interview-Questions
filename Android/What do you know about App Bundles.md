@@ -31,5 +31,5 @@ Publishing with Android App Bundles helps your users to install your app with th
 
 [Building your first app bundle](https://medium.com/androiddevelopers/building-your-first-app-bundle-bbcd228bf631)
 
-# Next Questions
+# Next questions
 [What do you know about Play Feature Delivery?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Android/What%20do%20you%20know%20about%20Play%20Feature%20Delivery.md)

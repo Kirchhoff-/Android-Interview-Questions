@@ -38,5 +38,5 @@ Teams already using TDD or ATDD may want to consider BDD for several reasons:
 
 [Behavior Driven Development](https://en.ryte.com/wiki/Behavior_Driven_Development)
 
-# Next Questions
+# Next questions
 [Describe Test Driven Development](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Testing/Describe%20Test%20Driven%20Development.md)
