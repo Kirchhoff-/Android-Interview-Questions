@@ -53,3 +53,5 @@ Actually both functions return application object since application itself is a 
 [Using Context Theme Wrapper on Android](https://ataulm.com/2019/11/20/using-context-theme-wrapper.html)
 
 [Activity Context vs Application Context: A Deep Dive into Android Development](https://medium.com/@mahmoud.alkateb22/activity-context-vs-application-context-a-deep-dive-into-android-development-94fc41233de7)
+
+[Using the Android Context and Manifest to Unveil the Android System Mechanics (2025 Edition)](https://proandroiddev.com/using-the-android-context-and-manifest-to-unveil-the-android-system-internals-2025-edition-eb730dd95f1d)
