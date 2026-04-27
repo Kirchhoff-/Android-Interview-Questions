@@ -100,3 +100,5 @@ Explanation:<sup>[6](https://www.javaguides.net/2023/10/decorator-design-pattern
 [Decorator Pattern in Jetpack Compose Android Apps](https://www.blog.finotes.com/post/decorator-pattern-in-jetpack-compose-android-apps)
 
 [Decorator Pattern in Kotlin](https://swiderski.tech/kotlin-decorator-pattern/)
+
+[Decorator Pattern in Kotlin — Embracing Open/Closed Principle](https://itnext.io/decorator-pattern-in-kotlin-embracing-open-closed-principle-b469adc2ab7b)
