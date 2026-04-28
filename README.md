@@ -13,6 +13,11 @@ Examples of test assignments can be found [here](https://github.com/Kirchhoff-/A
 [Middle android developer (Rx stack)](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Middle-android-developer-interview-questions-(Rx-stack))  
 [Middle android developer (Coroutines stack)](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Middle-android-developer-interview-questions--(Coroutines-stack))
 
+## Questions to Ask Employers
+Don’t forget — interviews go both ways. You’re not only being evaluated, you’re also evaluating the company.
+
+A list of questions that can help you better understand the team, processes, and what it’s actually like to work there can be found [here](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Questions-to-Ask-Your-Interviewer)
+
 ## Questions count
 
 [Android](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Android): 96  
