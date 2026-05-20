@@ -8,6 +8,9 @@ You can find complete list of questions on the [wiki page](https://github.com/Ki
 ## Test assignments
 Examples of test assignments can be found [here](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Test-Assignments)
 
+## Coding Challenges
+Examples of coding challenges can be found [here](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Coding-Challenges)
+
 ## Interview examples
 [Junior android developer](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Junior-android-developer-interview-questions)  
 [Middle android developer (Rx stack)](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Middle-android-developer-interview-questions-(Rx-stack))  
