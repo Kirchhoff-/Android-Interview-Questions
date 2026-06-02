@@ -169,6 +169,8 @@ There are differences in the initialization behavior between object declarations
 # Next questions
 [What do you know about `companion object`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/What%20do%20you%20know%20about%20companion%20object.md)
 
+[What is the difference between `object` and `companion object`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/What%20is%20the%20difference%20between%20object%20and%20companion%20object.md)
+
 # Further reading
 [Understanding the Object Keyword in Kotlin](https://medium.com/softaai-blogs/understanding-the-object-keyword-in-kotlin-5902bc8cd6a4)
 

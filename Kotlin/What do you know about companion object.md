@@ -139,3 +139,5 @@ interface MyInterface {
 
 # Next questions
 [What do you know about `object` keyword?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/Object%20keyword.md)
+
+[What is the difference between `object` and `companion object`?](https://github.com/Kirchhoff-/Android-Interview-Questions/blob/master/Kotlin/What%20is%20the%20difference%20between%20object%20and%20companion%20object.md)
