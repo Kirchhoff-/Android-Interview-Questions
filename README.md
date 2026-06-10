@@ -27,12 +27,12 @@ A list of questions that can help you better understand the team, processes, and
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Java): 69  
 [Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Kotlin): 54  
 [Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Rx): 20  
-[General](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/General): 46  
+[General](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/General): 47  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Testing): 13  
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
 [Libraries](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Libraries): 13
 
-Total number of questions: 333
+Total number of questions: 334
 
 ## Discussions
 The [Discussions](https://github.com/Kirchhoff-/Android-Interview-Questions/discussions) section also works. It contains questions where your opinion would be interesting to know.
