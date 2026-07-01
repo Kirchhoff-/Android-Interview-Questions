@@ -26,7 +26,7 @@ A list of questions that can help you better understand the team, processes, and
 [Android](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Android): 96  
 [Java](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Java): 69  
 [Kotlin](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Kotlin): 54  
-[Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Rx): 20  
+[Rx](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Rx): 21  
 [General](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/General): 48  
 [Testing](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Testing): 13  
 [Patterns](https://github.com/Kirchhoff-/Android-Interview-Questions/wiki/Patterns): 28  
